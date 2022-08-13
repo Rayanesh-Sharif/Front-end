@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 
 // create a Navbar component that renders a Navbar with a brand name on left side and a list of links at left with distance
 const NavbarSection = () => {
-    const logo = require("../pics/logo.png");
+    const logo = require("../assets/pics/logo.png");
     return (
         <Navbar stick="top" style={{ background: "#21A362" }} variant="dark" expand="lg">
             <Container>

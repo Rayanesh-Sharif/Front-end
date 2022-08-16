@@ -7,7 +7,7 @@ import NavbarSection from "./components/NavbarSection";
 function App() {
     return (
         <Router>
-            <NavbarSection />
+            <NavbarSection loggedIn={true} Name={"asghar"} />
             <div className="App">
                 <Routes>
                     <Route path="/" element={<LandingPage />} />

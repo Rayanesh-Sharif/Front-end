@@ -21,7 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+package-lock.json
 
 # Created by https://www.toptal.com/developers/gitignore/api/react,webstorm+all,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=react,webstorm+all,visualstudiocode
@@ -198,3 +198,4 @@ sketch
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/react,visualstudiocode
+/yarn.lock

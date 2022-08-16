@@ -4,8 +4,8 @@ import {
     MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarToggler,
+    MDBRow,
     MDBNavbarNav,
-    MDBNavbarItem,
     MDBNavbarLink,
     MDBCollapse
 } from 'mdb-react-ui-kit';
@@ -40,12 +40,12 @@ const NavbarSection = (
                 ) : null}
                 <MDBNavbarToggler aria-controls="basic-navbar-nav" />
                 <MDBCollapse id="basic-navbar-nav">
-                    <MDBNav className="me-auto">
+                    <MDBNavbarNav className="me-auto">
                         {/*<Navbar.Brand href="#home">Brand link</Navbar.Brand>*/}
                         <MDBNavbarLink href="#home">Home</MDBNavbarLink>
                         <MDBNavbarLink href="#link">Link</MDBNavbarLink>
 
-                    </MDBNav>
+                    </MDBNavbarNav>
                 </MDBCollapse>
                 <MDBNavbarBrand href="#home">
                     <img

@@ -1,6 +1,6 @@
 import React from 'react';
 import PopularBlogsSection from '../../components/PopularBlogsSection';
-import { Parallax, ParallaxLayer } from 'react-spring/parallax'
+import { Parallax, ParallaxLayer } from '@react-spring/web/parallax'
 
 function Blogs(props) {
     return (

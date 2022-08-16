@@ -33,7 +33,7 @@ const NavbarSection = (
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
-                ) : null}
+                ) : <button type="button" className="btn btn-primary">ورود/ثبت نام</button>}
 
                 {/*<MDBNavbarToggler aria-controls="basic-navbar-nav" />*/}
                 <MDBCollapse id="basic-navbar-nav">

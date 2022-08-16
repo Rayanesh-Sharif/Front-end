@@ -4,6 +4,7 @@ import {
     MDBCardTitle,
     MDBCardText,
     MDBCardImage,
+    MDBCardSubTitle,
     MDBRow,
     MDBCol,
     MDBContainer
@@ -19,8 +20,9 @@ const PopularBlogsSection = ({ blogs }) => {
                         <MDBCol className='align-items-center col-12 col-lg-4' key={blog.id}>
                             <MDBCard className='align-items-center border-0'>
                                 <MDBCardTitle>Card Title</MDBCardTitle>
-                                <MDBCardSubtitle className="mb-2 text-muted">Card Subtitle</MDBCardSubtitle>
-                                <MDBCardImage variant="top" src={"https://picsum.photos/1000/1000?random=" + blog.id} className="img-responsive rounded" />
+                                <MDBCardSubTitle className="mb-2 text-muted">Card Subtitle</MDBCardSubTitle>
+                                <MDBCardImage variant="top" src={"https://picsum.photos/1000/1000?random=" + blog.id}
+                                    className="w-100 img-responsive rounded" />
                                 <MDBCardText>
                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                                     Ex iure delectus accusantium laudantium eaque! Odio error

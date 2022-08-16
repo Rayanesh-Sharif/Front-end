@@ -4,8 +4,8 @@ import {
     MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarToggler,
+    MDBRow,
     MDBNavbarNav,
-    MDBNavbarItem,
     MDBNavbarLink,
     MDBCollapse, MDBRow
 } from 'mdb-react-ui-kit';

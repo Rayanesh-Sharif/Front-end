@@ -4,7 +4,6 @@ import {
     MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarToggler,
-    MDBRow,
     MDBNavbarNav,
     MDBNavbarLink,
     MDBCollapse, MDBRow
@@ -20,20 +19,17 @@ const NavbarSection = (
     const logo = require("../assets/pics/logo.png");
     return (
         <MDBNavbar stick="top" style={{ background: "#21A362" }} variant="dark" expand="lg">
-            <MDBContainer className={"m-0 p-0"}>
+            <MDBContainer >
                 {loggedIn ? (
 
                     <MDBContainer className={"d-block"}>
                         <MDBRow className={"d-flex m-0 px-1 justify-content-start align-center align-items-center"}>
-                            <MDBCol md={'3'} className={"p-0 m-0"}>
+                            <MDBCol md={'1'} className={"p-0 m-0"}>
                                 <img
                                     src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
                                     className="rounded-circle hover-overlay w-25"
                                     alt="Avatar"
                                 />
-                            </MDBCol>
-                            <MDBCol md={'4'}>
-                                Welcome {Name}
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
@@ -44,9 +40,16 @@ const NavbarSection = (
                         {/*<Navbar.Brand href="#home">Brand link</Navbar.Brand>*/}
                         <MDBNavbarLink href="#home">Home</MDBNavbarLink>
                         <MDBNavbarLink href="#link">Link</MDBNavbarLink>
+                        <MDBNavbarLink active aria-current='page' href='#'>
+                            Home
+                        </MDBNavbarLink>
 
                     </MDBNavbarNav>
                 </MDBCollapse>
+                <MDBNavbarLink aria-current='page' href='#'>
+                    Home
+                </MDBNavbarLink>
+
                 <MDBNavbarBrand href="#home">
                     <img
                         src={logo}

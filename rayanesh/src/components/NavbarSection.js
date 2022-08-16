@@ -7,7 +7,7 @@ import {
     MDBNavbarNav,
     MDBNavbarItem,
     MDBNavbarLink,
-    MDBCollapse
+    MDBCollapse, MDBRow
 } from 'mdb-react-ui-kit';
 
 // create a Navbar component that renders a Navbar with a brand name on left side and a list of links at left with distance
@@ -40,12 +40,12 @@ const NavbarSection = (
                 ) : null}
                 <MDBNavbarToggler aria-controls="basic-navbar-nav" />
                 <MDBCollapse id="basic-navbar-nav">
-                    <MDBNav className="me-auto">
+                    <MDBNavbarNav className="me-auto">
                         {/*<Navbar.Brand href="#home">Brand link</Navbar.Brand>*/}
                         <MDBNavbarLink href="#home">Home</MDBNavbarLink>
                         <MDBNavbarLink href="#link">Link</MDBNavbarLink>
 
-                    </MDBNav>
+                    </MDBNavbarNav>
                 </MDBCollapse>
                 <MDBNavbarBrand href="#home">
                     <img

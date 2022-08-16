@@ -33,7 +33,10 @@ const NavbarSection = (
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
-                ) : <button type="button" className="btn btn-primary">ورود/ثبت نام</button>}
+                ) : <button type="button" style={{fontFamily:'Vazir',fontSize: '10px',color:'#21A362'}}
+                            className="btn btn-light fw-bolder p-2">
+                    ورود / ثبت‌نام
+                </button>}
 
                 {/*<MDBNavbarToggler aria-controls="basic-navbar-nav" />*/}
                 <MDBCollapse id="basic-navbar-nav">

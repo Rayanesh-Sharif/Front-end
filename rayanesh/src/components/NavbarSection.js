@@ -27,28 +27,23 @@ const NavbarSection = (
                             <MDBCol md={'1'} className={"p-0 m-0"}>
                                 <img
                                     src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                                    className="rounded-circle hover-overlay w-25"
+                                    className="rounded-circle hover-overlay w-50"
                                     alt="Avatar"
                                 />
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
                 ) : null}
-                <MDBNavbarToggler aria-controls="basic-navbar-nav" />
+
+                {/*<MDBNavbarToggler aria-controls="basic-navbar-nav" />*/}
                 <MDBCollapse id="basic-navbar-nav">
                     <MDBNavbarNav className="me-auto">
                         {/*<Navbar.Brand href="#home">Brand link</Navbar.Brand>*/}
                         <MDBNavbarLink href="#home">Home</MDBNavbarLink>
                         <MDBNavbarLink href="#link">Link</MDBNavbarLink>
-                        <MDBNavbarLink active aria-current='page' href='#'>
-                            Home
-                        </MDBNavbarLink>
 
                     </MDBNavbarNav>
                 </MDBCollapse>
-                <MDBNavbarLink aria-current='page' href='#'>
-                    Home
-                </MDBNavbarLink>
 
                 <MDBNavbarBrand href="#home">
                     <img

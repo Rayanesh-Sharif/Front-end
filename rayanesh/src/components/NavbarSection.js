@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 const NavbarSection = () => {
     const logo = require("../assets/pics/logo.png");
     return (
-        <Navbar stick="top" style={{ background: "#21A362" }} variant="dark" expand="lg">
+        <Navbar sticky="top" style={{ background: "#21A362" }} variant="dark" expand="lg">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

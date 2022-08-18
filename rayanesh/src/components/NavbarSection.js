@@ -18,7 +18,7 @@ const NavbarSection = (
 ) => {
     const logo = require("../assets/pics/logo.png");
     return (
-        <MDBNavbar stick="top" style={{ background: "#21A362" }} variant="dark" expand="lg">
+        <MDBNavbar sticky="top" style={{ background: "#21A362" }} variant="dark" expand="lg">
             <MDBContainer >
                 {loggedIn ? (
 
@@ -33,8 +33,8 @@ const NavbarSection = (
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
-                ) : <button type="button" style={{fontFamily:'Vazir',fontSize: '10px',color:'#21A362'}}
-                            className="btn btn-light fw-bolder p-2">
+                ) : <button type="button" style={{ fontFamily: 'Vazir', fontSize: '10px', color: '#21A362' }}
+                    className="btn btn-light fw-bolder p-2">
                     ورود / ثبت‌نام
                 </button>}
 

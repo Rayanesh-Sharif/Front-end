@@ -4,17 +4,17 @@ import './BlogIntro.scss';
 const BlogIntro = () => {
     const view = require('../../assets/pics/logo.png');
     return (
-        <MDBContainer>
-            <div className='bg-component'>
-                <MDBRow className='g-0'>
-                    <MDBCol end className='no-padding col-12 col-lg-6' >
+        <MDBContainer className='bg-component'>
+            <div>
+                <MDBRow className='g-0 '>
+                    <MDBCol className='no-padding col-lg-6 col-12 order-3 order-sm-1 ' >
                         <p className="text text-center">!بخوانید و بنویسید</p>
                     </MDBCol>
-                    <MDBCol center className='hover-zoom align-items-center col-12 col-lg-5'>
-                        <img className='picture rounded mx-auto d-block' src={view}>
+                    <MDBCol className='hover-zoom align-items-center col-lg-5 col-12 order-2'>
+                        <img alt={'logo'} className='picture rounded mx-auto d-block' src={view}>
                         </img>
                     </MDBCol >
-                    <MDBCol start className='no-padding col-12 col-lg-1'>
+                    <MDBCol className='no-padding col-lg-1  col-12 order-1 order-sm-3'>
                         <p className="text text-center">در</p>
                     </MDBCol>
                 </MDBRow>

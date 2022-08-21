@@ -8,7 +8,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 function App() {
     return (
         <Router>
-            <NavbarSection loggedIn={false} Name={"mehrad"} />
+            <NavbarSection loggedIn={true} Name={"mehrad"} />
             <div className="App">
                 <Routes>
                     <Route path="/" element={<LandingPage />} />

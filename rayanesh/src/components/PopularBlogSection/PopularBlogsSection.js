@@ -12,7 +12,6 @@ import {
 } from 'mdb-react-ui-kit';
 
 const PopularBlogsSection = ({ blogs }) => {
-    const bgColor = "#21A362"
     return (
         <MDBContainer>
             <div className="subject">
@@ -29,12 +28,10 @@ const PopularBlogsSection = ({ blogs }) => {
                                         className="w-100 rounded" />
                                 </div>
                                 <MDBCardText className='text-normal text-end'>
-                                    با وجود اینکه زندگی پر از غم و غصه، نداری
-                                    و خیلی مشکلات دیگر است اما باز هم ارزش نفس کشیدن
-                                    و زندگی کردن را دارد و این فقط و فقط با تغییر نگرش میسر است چنانچه
+                                    {blog.description.substring(20)}
                                 </MDBCardText>
                                 <MDBCardFooter className='w-100 text-meta text-end'>
-                                    <small className='writer'>آرمین نوردی</small>
+                                    <small className='writer'>{blog.writer}</small>
                                 </MDBCardFooter>
                             </MDBCard>
                         </MDBCol>

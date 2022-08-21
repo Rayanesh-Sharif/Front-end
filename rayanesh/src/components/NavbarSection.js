@@ -3,7 +3,6 @@ import {
     MDBContainer,
     MDBNavbar,
     MDBNavbarBrand,
-    MDBNavbarToggler,
     MDBNavbarNav,
     MDBNavbarLink,
     MDBCollapse, MDBRow
@@ -18,8 +17,8 @@ const NavbarSection = (
 ) => {
     const logo = require("../assets/pics/logo.png");
     return (
-        <MDBNavbar sticky="top" style={{ background: "#21A362" }} variant="dark" expand="lg">
-            <MDBContainer >
+        <MDBNavbar sticky="top" style={{background: "#21A362"}} variant="dark" expand="lg">
+            <MDBContainer>
                 {loggedIn ? (
 
                     <MDBContainer className={"d-block"}>
@@ -33,8 +32,8 @@ const NavbarSection = (
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
-                ) : <button type="button" style={{ fontFamily: 'Vazir', fontSize: '10px', color: '#21A362' }}
-                    className="btn btn-light fw-bolder p-2">
+                ) : <button type="button" style={{fontFamily: 'Vazir', fontSize: '10px', color: '#21A362'}}
+                            className="btn btn-light fw-bolder p-2">
                     ورود / ثبت‌نام
                 </button>}
 
@@ -50,6 +49,7 @@ const NavbarSection = (
 
                 <MDBNavbarBrand href="#home">
                     <img
+                        alt={'logo'}
                         src={logo}
                         width={50}
                         height={30}

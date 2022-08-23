@@ -11,7 +11,7 @@ import {
 } from "mdb-react-ui-kit";
 import './BlogsViewer.scss';
 
-const BlogViewer = ({blogs}) => {
+const BlogsViewer = ({blogs}) => {
     return (
         <MDBContainer>
             {
@@ -41,4 +41,4 @@ const BlogViewer = ({blogs}) => {
     );
 }
 
-export default BlogViewer;
+export default BlogsViewer;

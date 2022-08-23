@@ -6,7 +6,7 @@ import {
     MDBNavbarToggler,
     MDBNavbarNav,
     MDBNavbarLink,
-    MDBCollapse, MDBRow
+    MDBCollapse, MDBRow,MDBIcon
 } from 'mdb-react-ui-kit';
 
 // create a Navbar component that renders a Navbar with a brand name on left side and a list of links at left with distance
@@ -37,7 +37,7 @@ const NavbarSection = (
                             className="btn btn-light fw-bolder p-2">
                     ورود / ثبت‌نام
                 </button>}
-
+                <MDBIcon icon='camera-retro' />
                 {/*<MDBNavbarToggler aria-controls="basic-navbar-nav" />*/}
                 <MDBCollapse id="basic-navbar-nav">
                     <MDBNavbarNav className="me-auto">

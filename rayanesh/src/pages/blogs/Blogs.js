@@ -5,29 +5,28 @@ import './blogs.scss';
 import PopularBlogsSection from "../../components/PopularBlogSection/PopularBlogsSection";
 import BlogsViewer from "../../components/BlogsViewer/BlogsViewer";
 
-
-const fetchRecentBlogs = async () => {
+const fetchPopularBlogs = async () => {
     const result = await fetch('http://localhost:3000/popular_posts')
     return result.json()
 }
 
-function Blogs() {
-    const {status, data:popularBlogs, errorPb} = useQuery('popular_blogs', fetchRecentBlogs)
+const fetchRecentBlogs = async () => {
+    const result = await fetch(' http://localhost:3000/posts')
+    return result.json()
+}
 
-    if (status === 'success') {
+function Blogs() {
+    const {data: popularBlogs, status: pStatus} = useQuery('popular_blogs', fetchPopularBlogs)
+    const {data: recentBlogs, status: rStatus} = useQuery('recent_blogs', fetchRecentBlogs)
+    if (pStatus === 'success' && rStatus === 'success') {
         return (
             <>
                 <PopularBlogsSection blogs={popularBlogs}/>
                 <BlogIntro/>
-
+                <BlogsViewer blogs={recentBlogs}/>
             </>
         );
-    } else if (errorPb)
-        return (
-            <div>
-                {errorPb}
-            </div>
-        )
+    }
 }
 
 export default Blogs;

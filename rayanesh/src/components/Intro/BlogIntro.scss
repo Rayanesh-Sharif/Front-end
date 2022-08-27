@@ -1,0 +1,33 @@
+@import '../../sassStyles/variables';
+
+.bg-component {
+  margin: 0.8rem;
+  color: white;
+
+  justify-content: center;
+  /* fallback for old browsers */
+  background: $rayanesh-green;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba($rayanesh-green, 0.5), rgba(127, 255, 191, 0.5));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, $rayanesh-green, $rayanesh-green-light);
+
+  .picture {
+    width: 7rem;
+    height: 4rem;
+    border-radius: 0.5rem;
+  }
+
+  .text {
+    color: white;
+    font-size: 2rem !important;
+    font-family: 'Vazir', serif;
+    font-weight: bold;
+  }
+
+  .no-padding {
+    padding: 0;
+    margin: 0;
+  }
+  
+}

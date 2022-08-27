@@ -1,15 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "react-query";
 import './index.scss';
 import App from './App';
 import './assets/fonts/Vazir.ttf'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+
 root.render(
-  <React.StrictMode>
+  <StrictMode>
+      <QueryClientProvider client={new QueryClient()}>
     <App />
-  </React.StrictMode>
+      </QueryClientProvider>
+  </StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

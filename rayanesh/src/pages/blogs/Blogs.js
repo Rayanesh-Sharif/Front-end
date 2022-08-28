@@ -4,6 +4,7 @@ import BlogIntro from '../../components/Intro/BlogIntro';
 import './blogs.scss';
 import PopularBlogsSection from "../../components/PopularBlogSection/PopularBlogsSection";
 import BlogsViewer from "../../components/BlogsViewer/BlogsViewer";
+import { useInView } from 'react-intersection-observer'
 
 const fetchPopularBlogs = async () => {
     const result = await fetch('http://localhost:3000/popular_posts')
@@ -11,19 +12,22 @@ const fetchPopularBlogs = async () => {
 }
 
 const fetchRecentBlogs = async () => {
-    const result = await fetch(' http://localhost:3000/posts')
+    const result = await fetch('http://localhost:3000/posts')
     return result.json()
 }
 
 function Blogs() {
     const {data: popularBlogs, status: pStatus} = useQuery('popular_blogs', fetchPopularBlogs)
     const {data: recentBlogs, status: rStatus} = useQuery('recent_blogs', fetchRecentBlogs)
-    if (pStatus === 'success' && rStatus === 'success') {
+
+    const isSuccess = pStatus === 'success' && rStatus === 'success'
+
+    if (isSuccess) {
         return (
             <>
                 <PopularBlogsSection blogs={popularBlogs}/>
                 <BlogIntro/>
-                <BlogsViewer blogs={recentBlogs}/>
+                <BlogsViewer blogs={recentBlogs} isEnable={isSuccess}/>
             </>
         );
     }

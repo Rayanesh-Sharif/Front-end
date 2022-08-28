@@ -17,7 +17,7 @@
   font-size: .8rem;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-
+  margin-bottom: 1rem;
   &::after {
     z-index: -1;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);

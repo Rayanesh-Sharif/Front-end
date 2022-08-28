@@ -24,7 +24,7 @@ const PopularBlogsSection = ({blogs}) => {
             <MDBRow className='g-5 card-blog' bg="light">
                 {
                     blogs.map((blog) => (
-                            <MDBCol className='col-12 col-lg-4' key={blog.id}>
+                            <MDBCol className='col-12 col-md-4' key={blog.id}>
                                 <MDBCard
                                     className='align-items-center border-0 card-style w-90'>
                                     <MDBCardTitle className='mt-3 text-head'>{blog.title}</MDBCardTitle>

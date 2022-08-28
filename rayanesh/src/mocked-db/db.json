@@ -8,6 +8,7 @@
       "title": "همه برای رایانش",
       "writer": "آرش یادگاری",
       "date": "2014-09-05T17:57:28.556094Z",
+      "read_time": "1 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=1"
     },
@@ -18,6 +19,7 @@
       "title": "دانشکده‌ی ما",
       "writer": "آرمین نوردی",
       "date": "2014-09-05T17:57:28.556094Z",
+      "read_time": "2 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=2"
     },
@@ -28,6 +30,7 @@
       "title": "از سبزی رایانش",
       "writer": "محمد رضایی",
       "date": "2022-07-05T17:57:28.556094Z",
+      "read_time": "5 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=3"
     }
@@ -38,22 +41,58 @@
       "user_id": 1,
       "title": "دوست داشتن",
       "writer": "آرش یادگاری",
+      "date": "2018-09-05T17:57:28.556094Z",
+      "read_time": "4 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=4"
     },
     {
       "id": 5,
       "user_id": 2,
-      "title": "تفکری در باب خدا",
+      "title": "فرانت نخوندم!",
       "writer": "آرمین نوردی",
+      "date": "2019-09-05T17:57:28.556094Z",
+      "read_time": "2 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=5"
     },
     {
       "id": 6,
       "user_id": 3,
-      "title": "چرا فروید؟",
+      "title": "بک اند زنی که فرانت زد",
       "writer": "علی طارمی",
+      "date": "2022-06-05T17:57:28.556094Z",
+      "read_time": "10 دقیقه",
+      "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
+      "image": "https://picsum.photos/seed/picsum/1000/1000?random=6"
+    },
+    {
+      "id": 7,
+      "user_id": 1,
+      "title": "یه چیزی",
+      "writer": "آرش یادگاری",
+      "date": "2018-09-05T17:57:28.556094Z",
+      "read_time": "4 دقیقه",
+      "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
+      "image": "https://picsum.photos/seed/picsum/1000/1000?random=4"
+    },
+    {
+      "id": 8,
+      "user_id": 2,
+      "title": "دو چیزی",
+      "writer": "آرمین نوردی",
+      "date": "2019-09-05T17:57:28.556094Z",
+      "read_time": "2 دقیقه",
+      "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
+      "image": "https://picsum.photos/seed/picsum/1000/1000?random=5"
+    },
+    {
+      "id":9 ,
+      "user_id": 3,
+      "title": "سه چیزی",
+      "writer": "علی طارمی",
+      "date": "2022-06-05T17:57:28.556094Z",
+      "read_time": "10 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=6"
     }
@@ -62,17 +101,17 @@
     {
       "id": 1,
       "name": "آرش یادگاری",
-      "profile_img": "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+      "image": "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
     },
     {
       "id": 2,
       "name": "آرمین نوردی",
-      "profile_img": "https://mdbcdn.b-cdn.net/img/new/avatars/3.webp"
+      "image": "https://mdbcdn.b-cdn.net/img/new/avatars/3.webp"
     },
     {
       "id": 3,
-      "name": "محمد رضایی",
-      "profile_img": "https://mdbcdn.b-cdn.net/img/new/avatars/4.webp"
+      "name": "یاسمین رضایی",
+      "image": "https://mdbcdn.b-cdn.net/img/new/avatars/4.webp"
     }
   ]
 }

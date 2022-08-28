@@ -6,12 +6,10 @@ function getDifferenceInYears(date1, date2) {
 
 function findDistance(differenceInYears, amount, unit) {
     if (differenceInYears >= 1) {
-        console.log(differenceInYears)
         amount = Math.floor(differenceInYears)
     } else {
         const differenceInMonths = differenceInYears * 12
         if (differenceInMonths >= 1) {
-            console.log(differenceInMonths)
             amount = Math.floor(differenceInMonths)
             unit = 'ماه'
         } else {

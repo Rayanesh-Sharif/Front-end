@@ -3,6 +3,8 @@ import Heading from "../../components/heading";
 import NavbarSection from "../../components/NavbarSection";
 import AboutUs from "../../components/aboutUs";
 import LandingBlogs from "../../components/landingBlogs";
+import Gallery from "../../components/Gallery";
+import Footer from "../../components/Footer";
 
 function LandingPage(props) {
     // let backgg = 'https://w0.peakpx.com/wallpaper/92/878/HD-wallpaper-watermark-white-blocks-white-and-gray-background-white-background-white-white-blocks-gray-background-mermaid-nareda.jpg';
@@ -30,13 +32,15 @@ function LandingPage(props) {
 
             {/*blogs section*/}
             <div className="row justify-content-center" >
-                <LandingBlogs/>
+                {/*done but needs the blogs to be shown!!!*/}
+                {/*<LandingBlogs/>*/}
             </div>
 
-            {/*/!*galery section*!/*/}
-            {/*<div className="row justify-content-center" >*/}
-            {/*    <Heading/>*/}
-            {/*</div>*/}
+            {/*galery section*/}
+            <div className="row justify-content-center" >
+                <Gallery/>
+            </div>
+
 
             {/*/!*podcasts section*!/*/}
             {/*<div className="row justify-content-center" >*/}
@@ -53,10 +57,10 @@ function LandingPage(props) {
             {/*    <Heading/>*/}
             {/*</div>*/}
 
-            {/*/!*footer section*!/*/}
-            {/*<div className="row justify-content-center" >*/}
-            {/*    <Heading/>*/}
-            {/*</div>*/}
+            {/*footer section*/}
+            <div className="row justify-content-center" >
+                <Footer/>
+            </div>
 
         </div>
     );

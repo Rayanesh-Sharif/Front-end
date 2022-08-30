@@ -37,7 +37,6 @@ const NavbarSection = (
                             className="btn btn-light fw-bolder p-2">
                     ورود / ثبت‌نام
                 </button>}
-                <MDBIcon icon='camera-retro' />
                 {/*<MDBNavbarToggler aria-controls="basic-navbar-nav" />*/}
                 <MDBCollapse id="basic-navbar-nav">
                     <MDBNavbarNav className="me-auto">

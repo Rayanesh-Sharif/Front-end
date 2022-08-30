@@ -18,7 +18,7 @@ const NavbarSection = (
 ) => {
     const logo = require("../assets/pics/logo.png");
     return (
-        <MDBNavbar stick="top" style={{ background: "#21A362" }} variant="dark" expand="lg">
+        <MDBNavbar stick="top" className={"fixed-top overflow-hidden"} style={{ background: "#21A362" }} variant="dark" expand="lg">
             <MDBContainer >
                 {loggedIn ? (
 

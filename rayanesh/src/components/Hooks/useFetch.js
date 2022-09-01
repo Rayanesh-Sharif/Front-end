@@ -4,7 +4,7 @@ function useFetch({url, key, isEnable = true}) {
     const {data, status} = useQuery(
         [key],
         async () => {
-            const result = await fetch(url)
+            const result = await fetch(url);
             return result.json()
         },
         {

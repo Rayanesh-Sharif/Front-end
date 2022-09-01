@@ -4,6 +4,7 @@ import NotFound from "./pages/notFound/NotFound";
 import Blogs from "./pages/blogs/Blogs";
 import NavbarSection from "./components/NavbarSection/NavbarSection";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import React from "react";
 
 function App() {
     return (

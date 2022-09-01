@@ -10,6 +10,7 @@ import {
     MDBCol,
     MDBContainer
 } from 'mdb-react-ui-kit';
+import LazyLoad from 'react-lazy-load';
 
 
 import RelativeDate from "../RelativeDate";
@@ -29,9 +30,11 @@ const PopularBlogsSection = ({blogs}) => {
                                     className='align-items-center border-0 card-style w-90'>
                                     <MDBCardTitle className='mt-3 text-head'>{blog.title}</MDBCardTitle>
                                     <div className='bg-image hover-zoom image'>
-                                        <MDBCardImage variant="top"
-                                                      src={"https://picsum.photos/1000/1000?random=" + blog.id}
-                                                      className="w-100 rounded"/>
+                                        <LazyLoad>
+                                            <MDBCardImage variant="top"
+                                                          src={"https://picsum.photos/1000/1000?random=" + blog.id}
+                                                          className="w-100 rounded"/>
+                                        </LazyLoad>
                                     </div>
                                     <MDBCardText className='text-normal text-end'>
                                         {blog.description}

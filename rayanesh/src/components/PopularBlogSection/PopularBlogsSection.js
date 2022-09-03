@@ -1,59 +1,55 @@
 import React from "react";
 import "./PopularBlogsSection.scss";
-import {
-  MDBCard,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardImage,
-  MDBCardFooter,
-  MDBRow,
-  MDBCol,
-  MDBContainer,
-} from "mdb-react-ui-kit";
 
 import RelativeDate from "../RelativeDate";
-import { Container, styled } from "@mui/system";
+import {Box, Container, styled} from "@mui/system";
+import {Typography, Grid, Card, CardActionArea, CardMedia, CardContent} from "@mui/material";
 
 const Row = styled(Container)({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: 50,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 50
 });
 
-const PopularBlogsSection = ({ blogs }) => {
-  return (
-    <MDBContainer>
-      <div className="subject">
-        <h1>محبوب‌ترین‌ها</h1>
-      </div>
-      <Row>
-        {blogs.map((blog) => (
-          <MDBCol className="col-12 col-lg-4" key={blog.id}>
-            <MDBCard className="align-items-center border-0 card-style w-90">
-              <MDBCardTitle className="mt-3 text-head">
-                {blog.title}
-              </MDBCardTitle>
-              <div className="bg-image hover-zoom image">
-                <MDBCardImage
-                  variant="top"
-                  src={"https://picsum.photos/1000/1000?random=" + blog.id}
-                  className="w-100 rounded"
-                />
-              </div>
-              <MDBCardText className="text-normal text-end">
-                {blog.description}
-              </MDBCardText>
-              <MDBCardFooter className="w-100 text-meta">
-                <div className="writer">{blog.writer}</div>
-                <div> {RelativeDate(new Date(blog.date))}</div>
-              </MDBCardFooter>
-            </MDBCard>
-          </MDBCol>
-        ))}
-      </Row>
-    </MDBContainer>
-  );
+
+const PopularBlogsSection = ({blogs}) => {
+    return (
+        <Container>
+            <Typography variant={'h4'} dir={'rtl'} m={2}>محبوب‌ترین‌ها</Typography>
+            <Grid container spacing={2} columns={{sm: 12, md: 3}}>
+                {blogs.map((blog) => (
+                    <Grid item sm={12} md={1} key={blog.id}>
+                        <Card>
+
+                            <CardActionArea sx={{width: '90%'}}>
+                                <Box
+                                    display= "flex"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                >
+                                    <CardMedia
+                                        component="img"
+                                        image={blog.image}
+                                        alt="green iguana"
+                                    />
+                                </Box>
+                            </CardActionArea>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Lizard
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Lizards are a widespread group of squamate reptiles, with over 6,000
+                                    species, ranging across all continents except Antarctica
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
+        </Container>
+    );
 };
 
 export default PopularBlogsSection;

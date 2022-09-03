@@ -11,13 +11,13 @@ function App() {
         <Router>
             <NavbarSection loggedIn={false}  />
             <RichTextEditor />
-{/*            <div className="App">
+           <div className="App">
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/blogs" element={<Blogs />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
-            </div>*/}
+            </div>
         </Router>
     )
 }

@@ -10,8 +10,8 @@ function App() {
     return (
         <Router>
             <NavbarSection loggedIn={false}  />
-            {/*<RichTextEditor />*/}
-            <div className="App">
+            <RichTextEditor />
+           <div className="App">
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/blogs" element={<Blogs />} />

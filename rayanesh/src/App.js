@@ -4,14 +4,13 @@ import NotFound from "./pages/notFound/NotFound";
 import Blogs from "./pages/blogs/Blogs";
 import NavbarSection from "./components/NavbarSection/NavbarSection";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-import RichTextEditor from "./components/RichTextEditor/RichTextEditor";
+import React from "react";
 
 function App() {
     return (
         <Router>
             <NavbarSection loggedIn={false}  />
-            <RichTextEditor />
-           <div className="App">
+            <div className="App">
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/blogs" element={<Blogs />} />

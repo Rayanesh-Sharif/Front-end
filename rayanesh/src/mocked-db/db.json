@@ -1,23 +1,22 @@
 {
-
-  "popular_posts": [
+  "posts": [
     {
       "id": 1,
-      "views":20,
+      "views": 100,
       "user_id": 1,
       "title": "همه برای رایانش",
-      "writer": "آرش یادگاری",
       "date": "2014-09-05T17:57:28.556094Z",
+      "read_time": "1 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=1"
     },
     {
       "id": 2,
-      "views": 10,
+      "views": 70,
       "user_id": 2,
       "title": "دانشکده‌ی ما",
-      "writer": "آرمین نوردی",
       "date": "2014-09-05T17:57:28.556094Z",
+      "read_time": "2 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=2"
     },
@@ -26,34 +25,68 @@
       "views": 5,
       "user_id": 3,
       "title": "از سبزی رایانش",
-      "writer": "محمد رضایی",
       "date": "2022-07-05T17:57:28.556094Z",
+      "read_time": "5 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=3"
-    }
-  ],
-  "posts": [
+    },
     {
       "id": 4,
+      "views": 90,
       "user_id": 1,
       "title": "دوست داشتن",
-      "writer": "آرش یادگاری",
+      "date": "2018-09-05T17:57:28.556094Z",
+      "read_time": "4 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=4"
     },
     {
       "id": 5,
+      "views": 130,
       "user_id": 2,
-      "title": "تفکری در باب خدا",
-      "writer": "آرمین نوردی",
+      "title": "فرانت نخوندم!",
+      "date": "2019-09-05T17:57:28.556094Z",
+      "read_time": "2 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=5"
     },
     {
       "id": 6,
+      "views": 10,
       "user_id": 3,
-      "title": "چرا فروید؟",
-      "writer": "علی طارمی",
+      "title": "بک اند زنی که فرانت زد",
+      "date": "2022-06-05T17:57:28.556094Z",
+      "read_time": "10 دقیقه",
+      "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
+      "image": "https://picsum.photos/seed/picsum/1000/1000?random=6"
+    },
+    {
+      "id": 7,
+      "views": 15,
+      "user_id": 1,
+      "title": "یه چیزی",
+      "date": "2018-09-05T17:57:28.556094Z",
+      "read_time": "4 دقیقه",
+      "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
+      "image": "https://picsum.photos/seed/picsum/1000/1000?random=4"
+    },
+    {
+      "id": 8,
+      "views": 250,
+      "user_id": 2,
+      "title": "دو چیزی",
+      "date": "2019-09-05T17:57:28.556094Z",
+      "read_time": "2 دقیقه",
+      "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
+      "image": "https://picsum.photos/seed/picsum/1000/1000?random=5"
+    },
+    {
+      "id": 9,
+      "views": 115,
+      "user_id": 1,
+      "title": "سه چیزی",
+      "date": "2022-06-05T17:57:28.556094Z",
+      "read_time": "10 دقیقه",
       "description": "این یک معرفی کوچک از متنی است که قرار است نمایش داده شود.",
       "image": "https://picsum.photos/seed/picsum/1000/1000?random=6"
     }
@@ -62,17 +95,17 @@
     {
       "id": 1,
       "name": "آرش یادگاری",
-      "profile_img": "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+      "image": "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
     },
     {
       "id": 2,
       "name": "آرمین نوردی",
-      "profile_img": "https://mdbcdn.b-cdn.net/img/new/avatars/3.webp"
+      "image": "https://mdbcdn.b-cdn.net/img/new/avatars/3.webp"
     },
     {
       "id": 3,
-      "name": "محمد رضایی",
-      "profile_img": "https://mdbcdn.b-cdn.net/img/new/avatars/4.webp"
+      "name": "زن کاظمک",
+      "image": "https://mdbcdn.b-cdn.net/img/new/avatars/12.webp"
     }
   ]
 }

@@ -9,7 +9,7 @@ import {
     MDBCardFooter
 } from "mdb-react-ui-kit";
 import './BlogsViewer.scss';
-import RelativeDate from "../RelativeDate";
+import {relativeDate} from "../../helpers/relativeDate";
 import LazyLoad from 'react-lazy-load';
 import {BsCalendar2Event} from 'react-icons/bs';
 import {BiTime} from 'react-icons/bi';
@@ -49,7 +49,7 @@ const BlogsViewer = ({blogs}) => {
                                                         className='text-muted'>
                                                         <BsCalendar2Event/>
                                                         {
-                                                            `\t${RelativeDate(new Date(blog.date))}`
+                                                            `\t${relativeDate(new Date(blog.date))}`
                                                         }
                                                         <BiTime/>
                                                         {

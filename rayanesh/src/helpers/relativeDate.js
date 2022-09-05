@@ -44,7 +44,7 @@ function findDistance(differenceInYears, amount, unit) {
     }
 }
 
-const RelativeDate = (date) => {
+export const relativeDate = (date) => {
     const now = Date.now()
 
     let unit = 'سال '
@@ -55,6 +55,3 @@ const RelativeDate = (date) => {
             time.amount + ' ' + time.unit + ' پیش '
     )
 }
-
-
-export default RelativeDate

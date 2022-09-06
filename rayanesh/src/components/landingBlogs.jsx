@@ -10,22 +10,25 @@ const fetchPopularBlogs = async () => {
 
 function LandingBlogs(props) {
     const {data: popularBlogs, status: pStatus} = useQuery('popular_blogs', fetchPopularBlogs)
-    return (
-        <PopularBlogsSection blogs={popularBlogs}/>
-        // <MDBContainer>
-        //     <MDBRow around={true}>
-        //         <MDBCol>
-        //             a
-        //         </MDBCol>
-        //         <MDBCol>
-        //             b
-        //         </MDBCol>
-        //         <MDBCol>
-        //             c
-        //         </MDBCol>
-        //     </MDBRow>
-        // </MDBContainer>
-    );
+    if (pStatus === 'success') {
+        return (
+            <PopularBlogsSection blogs={popularBlogs}/>
+
+            // <MDBContainer>
+            //     <MDBRow around={true}>
+            //         <MDBCol>
+            //             a
+            //         </MDBCol>
+            //         <MDBCol>
+            //             b
+            //         </MDBCol>
+            //         <MDBCol>
+            //             c
+            //         </MDBCol>
+            //     </MDBRow>
+            // </MDBContainer>
+        );
+    }
 }
 
 export default LandingBlogs;

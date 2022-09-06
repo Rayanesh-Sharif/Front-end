@@ -1,5 +1,4 @@
 import React from "react";
-import "./PopularBlogsSection.scss";
 import {Container} from "@mui/system";
 import {
     Typography,
@@ -9,7 +8,8 @@ import {
     CardMedia,
     CardContent
 } from "@mui/material";
-import BlogMeta from "../BlogMeta";
+import BlogMeta from "./general/BlogMeta";
+import Image from "./general/Image";
 
 
 const PopularBlogsSection = ({blogs}) => {
@@ -18,18 +18,26 @@ const PopularBlogsSection = ({blogs}) => {
             <Typography variant={"h4"} dir={"rtl"} m={2}>
                 محبوب‌ترین‌ها
             </Typography>
-            <Grid container spacing={2} columns={{sm: 12, md: 3}}>
+            <Grid container justifyContent={'center'} spacing={2} columns={{sm: 12, md: 3}}>
                 {blogs.map((blog) => (
                     <Grid item sm={12} md={1} key={blog.id}>
-                        <Card>
+                        <Card
+                            sx={{
+                                ':hover': {
+                                    boxShadow: 20,
+                                }
+                            }}
+                        >
                             <CardActionArea>
-                                <CardMedia sx={{maxHeight: 275}}
-                                           image={"https://picsum.photos/1000/1000?random=" + (blog.id + 3)}
-                                           component="img"
-                                           alt={blog.title}
-                                />
+                                <CardMedia sx={{height:275, width:'100%'}}>
+                                    <Image
+                                        width='100%'
+                                        height='100%'
+                                        path={"https://picsum.photos/1000/1000?random=" + (blog.id + 3)}
+                                        name={blog.title}/>
+                                </CardMedia>
                                 <CardContent dir='rtl'>
-                                    <Typography variant="h5" component="div">
+                                    <Typography variant="h5">
                                         {blog.title}
                                     </Typography>
                                     <Typography paragraph variant="body2">

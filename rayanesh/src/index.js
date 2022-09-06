@@ -5,7 +5,6 @@ import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import './index.scss';
 import App from './App';
 import './assets/fonts/Vazir.ttf'
-import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 const root = createRoot(document.getElementById('root'));
 
 root.render(

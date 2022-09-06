@@ -1,6 +1,6 @@
-import BlogIntro from '../../components/Intro/BlogIntro';
-import PopularBlogsSection from "../../components/PopularBlogSection/PopularBlogsSection";
-import BlogsViewer from "../../components/BlogsViewer/BlogsViewer";
+import BlogIntro from '../../components/BlogIntro';
+import PopularBlogsSection from "../../components/PopularBlogsSection";
+import BlogsViewer from "../../components/BlogsViewer";
 import InfiniteScrollBlogs from "../../components/InfiniteScrollBlogs/InfiniteScrollBlogs";
 import useGetPopularPosts from "../../hooks/useGetPopularPosts";
 import useGetRecentPosts from "../../hooks/useGetRecentPosts";
@@ -19,15 +19,13 @@ function Blogs() {
         popularPosts.forEach(post => idList.add(post.user_id))
         recentPosts.forEach(post => idList.add(post.user_id))
     }
-    console.log(idList)
 
-    const {users, isSuccess} = useGetUsers({
+    const {users, isSuccess: isUsersFetched} = useGetUsers({
         data: [...idList],
         isEnable: isPostsFetched
     })
 
-    if (isSuccess && isPostsFetched) {
-        console.log('users', users, 'popularPosts', popularPosts, 'recentPosts', recentPosts)
+    if (isUsersFetched && isPostsFetched) {
         const popularBlogsWithUser = mapBlogsToUser({blogs: popularPosts, users})
         const recentBlogsWithUser = mapBlogsToUser({blogs: recentPosts, users})
         return (

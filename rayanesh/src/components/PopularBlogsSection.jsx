@@ -15,8 +15,11 @@ import Image from "./general/Image";
 const PopularBlogsSection = ({blogs}) => {
     return (
         <Container>
-            <Typography variant={"h4"} dir={"rtl"} m={2}>
+            <Typography variant={"h6"} dir={"rtl"} fontWeight={'bold'}>
                 محبوب‌ترین‌ها
+            </Typography>
+            <Typography variant={"body2"} dir={"rtl"} color={'textSecondary'} gutterBottom>
+                مطالبی که بیشترین بازدید را داشته‌اند
             </Typography>
             <Grid container justifyContent={'center'} spacing={2} columns={{sm: 12, md: 3}}>
                 {blogs.map((blog) => (
@@ -37,10 +40,10 @@ const PopularBlogsSection = ({blogs}) => {
                                         name={blog.title}/>
                                 </CardMedia>
                                 <CardContent dir='rtl'>
-                                    <Typography variant="h5">
+                                    <Typography variant="h6" fontWeight={'bold'} gutterBottom>
                                         {blog.title}
                                     </Typography>
-                                    <Typography paragraph variant="body2">
+                                    <Typography paragraph color={'textSecondary'} variant="body2">
                                         {blog.description}
                                     </Typography>
                                     <BlogMeta blog={blog}/>

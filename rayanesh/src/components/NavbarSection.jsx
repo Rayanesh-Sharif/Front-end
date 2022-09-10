@@ -80,9 +80,10 @@ const ResponsiveAppBar = () => {
                                 display: {xs: 'block', md: 'none'},
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                            {
+                                pages.map((p) => (
+                                <MenuItem key={p} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{p}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -102,7 +103,7 @@ const ResponsiveAppBar = () => {
                     <Box sx={{flexGrow: 0}}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"/>
+                                <Avatar alt="Bomb" src="/static/images/avatar/2.jpg"/>
                             </IconButton>
                         </Tooltip>
                         <Menu

@@ -30,10 +30,10 @@ const BlogsViewer = ({blogs}) => {
                             <Grid dir={'rtl'} container>
                                 <Grid item xs={10}>
                                     <CardContent dir={'rtl'}>
-                                        <Typography variant={'h5'}>
+                                        <Typography variant={'h6'} fontWeight={'bold'} gutterBottom>
                                             {blog.title}
                                         </Typography>
-                                        <Typography variant={'body2'} gutterBottom>
+                                        <Typography variant={'body2'} color={'textSecondary'} gutterBottom>
                                             {blog.description}
                                         </Typography>
                                         <BlogMeta blog={blog}/>

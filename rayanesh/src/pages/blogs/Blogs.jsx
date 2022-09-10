@@ -1,7 +1,6 @@
 import BlogIntro from '../../components/BlogIntro';
 import PopularBlogsSection from "../../components/PopularBlogsSection";
 import BlogsViewer from "../../components/BlogsViewer";
-import InfiniteScrollBlogs from "../../components/InfiniteScrollBlogs/InfiniteScrollBlogs";
 import useGetPopularPosts from "../../hooks/useGetPopularPosts";
 import useGetRecentPosts from "../../hooks/useGetRecentPosts";
 import useGetUsers from "../../hooks/useGetUsers";
@@ -33,7 +32,6 @@ function Blogs() {
                 <PopularBlogsSection blogs={popularBlogsWithUser}/>
                 <BlogIntro/>
                 <BlogsViewer blogs={recentBlogsWithUser}/>
-                <InfiniteScrollBlogs/>
             </>
         );
     }

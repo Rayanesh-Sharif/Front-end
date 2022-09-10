@@ -1,7 +1,7 @@
 import {Container} from "@mui/system";
 import {Grid, Button, Paper, Typography} from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
-
+import { useNavigate} from "react-router-dom";
 import * as React from 'react';
 import {styled} from '@mui/material/styles';
 
@@ -16,6 +16,8 @@ const ColorButton = styled(Button)(({theme}) => ({
 }));
 
 const BlogIntro = () => {
+    const navigate = useNavigate();
+
     return (
         <Container>
             <Paper elevation={3} sx={{backgroundColor: '#1a844f', width: '100%', margin: 'auto'}}>
@@ -27,7 +29,8 @@ const BlogIntro = () => {
                         <Typography
                             variant={'h3'}
                             color={"white"}
-                            gutterBottom>
+                            gutterBottom
+                        marginTop={1}>
                             در
                         </Typography>
                     </Grid>
@@ -36,6 +39,7 @@ const BlogIntro = () => {
                             fontWeight={'bold'}
                             variant={'h3'}
                             color={"white"}
+                            marginTop={1}
                             gutterBottom
                         >
                             [رایانش]
@@ -46,12 +50,17 @@ const BlogIntro = () => {
                             variant={'h3'}
                             color="white"
                             gutterBottom
+                            marginTop={1}
                         >
                             بخوانید و بنویسید
                         </Typography>
                     </Grid>
                     <Grid dir={'ltr'} item lg={4}>
-                        <ColorButton variant="outlined" endIcon={<SendIcon/>}>
+                        <ColorButton
+                            variant="outlined"
+                            endIcon={<SendIcon/>}
+                            onClick={() => navigate("/blogs/write")}
+                        >
                             یک پست بنویس
                         </ColorButton>
                     </Grid>

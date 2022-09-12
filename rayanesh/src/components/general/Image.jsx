@@ -16,7 +16,7 @@ const Image = ({path, name}) => {
                 }
             />
             {!isLoaded &&
-                <div style={{height: 275, backgroundColor: 'darkgrey'}} >
+                <div style={{height: 275, backgroundColor: 'rgba(70,67,67,0.36)'}} >
                 </div>
             }
         </div>

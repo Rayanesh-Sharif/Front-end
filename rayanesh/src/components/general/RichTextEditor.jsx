@@ -1,9 +1,14 @@
 import EditorJS from '@editorjs/editorjs';
 import Header from "@editorjs/header";
 import {useEffect, useId, useState} from "react";
+import AlignmentTuneTool from 'editorjs-text-alignment-blocktune';
 import ImageTool from '@editorjs/image';
-import Delimiter from '@editorjs/delimiter'
-import SimpleImage from "@editorjs/simple-image";
+import Delimiter from '@editorjs/delimiter';
+import List from '@editorjs/list';
+import Alert from 'editorjs-alert';
+import Paragraph from '@editorjs/paragraph';
+import CodeTool from '@editorjs/code';
+import ToggleBlock from 'editorjs-toggle-block'
 
 const initEditor = ({id, data, isReadOnly}) => {
     return new EditorJS({
@@ -11,9 +16,37 @@ const initEditor = ({id, data, isReadOnly}) => {
             placeholder: 'هر آنچه دل تنگت خواست',
             readOnly: isReadOnly,
             tools: {
-                delimiter: {
-                    class: Delimiter,
+                header: {
+                    class: Header,
                     inlineToolbar: true,
+                    title: 'عنوان',
+                    tunes: ['aligner'],
+                    config: {
+                        placeholder: 'عنوان',
+                        levels: [1, 2, 3],
+                        defaultLevel: 2,
+                    }
+                },
+                paragraph: {
+                    class: Paragraph,
+                    inlineToolbar: true,
+                    tunes: ['aligner'],
+                },
+                list: {
+                    class: List,
+                    inlineToolbar: true,
+                },
+                code: {
+                    class: CodeTool
+                },
+                alert: {
+                    class: Alert,
+                    inlineToolbar: true,
+                    config: {
+                        messagePlaceholder: 'متن پیام',
+                        defaultType: 'success',
+
+                    }
                 },
                 image: {
                     class: ImageTool,
@@ -22,15 +55,24 @@ const initEditor = ({id, data, isReadOnly}) => {
                         endpoints: {}
                     }
                 },
-                header: {
-                    class: Header,
-                    inlineToolbar: true,
-                    title: 'عنوان',
-                    config: {
-                        placeholder: 'عنوان',
-                    }
+                toggle: {
+                    class: ToggleBlock,
                 },
-
+                delimiter: {
+                    class: Delimiter,
+                    inlineToolbar: true,
+                },
+                aligner: {
+                    class: AlignmentTuneTool,
+                    config: {
+                        default: "right",
+                        blocks: {
+                            header: 'right',
+                            list: 'right',
+                            code: 'left',
+                        }
+                    },
+                }
             },
 
             i18n: {
@@ -56,6 +98,7 @@ const initEditor = ({id, data, isReadOnly}) => {
                     ,
                     toolNames: {
                         Heading: 'عنوان',
+                        List: 'لیست',
                         Text: 'متن',
                         Image: 'تصویر',
                         Delimiter: 'خط تقسیم',
@@ -63,6 +106,9 @@ const initEditor = ({id, data, isReadOnly}) => {
                         Italic: 'خمیده',
                         Link: 'لینک',
                         Filter: 'فیلتر',
+                        Alert: 'هشدار',
+                        Code: 'کد',
+                        Toggle: 'تغییر',
                     },
                     tools: {
                         heading: {
@@ -82,6 +128,20 @@ const initEditor = ({id, data, isReadOnly}) => {
                         },
                         filter: {
                             title: 'فیلتر',
+                        },
+                        list: {
+                            title: 'لیست',
+                        },
+                        alert: {
+                            title: 'هشدار',
+                        },
+                        code: {
+                            title: 'کد',
+                        },
+                        toggle: {
+                            'Toggle': 'تغییر بلوک',
+                            'Empty toggle. Click or drop blocks inside.':
+                                'تغییر خالی. بلوک ها را درونش بکشید یا کلیک کنید',
                         }
                     },
                     blockTunes: {
@@ -121,7 +181,7 @@ const GetEditor = ({data, isReadOnly}) => {
     }, [id, editor, data, isReadOnly]);
 
     return (
-        <div id={id}/>
+        <div style={{marginTop: '5%'}} id={id}/>
     )
 }
 export default GetEditor;

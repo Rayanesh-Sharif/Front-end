@@ -5,7 +5,7 @@ import Blogs from "./pages/blogs/Blogs";
 import NavbarSection from "./components/NavbarSection";
 import React from "react";
 import {createTheme, ThemeProvider} from "@mui/material";
-import RichTextProvider from "./components/RichTextProvider";
+import WriteBlog from "./pages/writeBlog/WriteBlog";
 
 const theme = createTheme({
     typography: {
@@ -25,7 +25,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<LandingPage/>}/>
                         <Route path="/blogs" element={<Blogs/>}/>
-                        <Route path="/blogs/write" element={<RichTextProvider/>}/>
+                        <Route path="/blogs/write" element={<WriteBlog/>}/>
                         <Route path="*" element={<NotFound/>}/>
                     </Routes>
                 </div>

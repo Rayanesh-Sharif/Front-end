@@ -15,7 +15,7 @@ import Image from "./general/Image";
 const PopularBlogsSection = ({blogs}) => {
     return (
         <Container>
-            <Typography variant={"h6"} dir={"rtl"} fontWeight={'bold'}>
+            <Typography variant={"h6"} dir={"rtl"} fontWeight={'bold'} marginTop={5}>
                 محبوب‌ترین‌ها
             </Typography>
             <Typography variant={"body2"} dir={"rtl"} color={'textSecondary'} gutterBottom>

@@ -8,9 +8,10 @@ export async function fetchPopularPosts() {
     return data
 }
 
-export async function fetchRecentBlogs() {
+export async function fetchRecentBlogs({pageParam=0, pageLimit=3}) {
+    console.log(pageParam)
     const {data} = await handleRequests({
-        url: 'posts?_sort=date&_order=desc',
+        url: `posts?_page=${pageParam}&_limit=${pageLimit}`,
         method: 'GET'
     })
     return data

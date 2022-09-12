@@ -2,7 +2,7 @@ import {useQueries} from "@tanstack/react-query";
 import {fetchUserById} from "../api/users";
 
 function useGetUsers({data, isEnable}) {
-    const queries = data.map(id => {
+    const queries = data?.map(id => {
         return {
             queryKey: ['getUserById', id],
             queryFn: () => fetchUserById({userId: id}),
@@ -18,7 +18,7 @@ function useGetUsers({data, isEnable}) {
 
 
     const isSuccess = result.every(query => query.status === 'success')
-    const users = result.map(query => query.data)
+    const users = result?.map(query => query.data)
     return {users, isSuccess}
 }
 

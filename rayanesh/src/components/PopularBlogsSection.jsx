@@ -22,7 +22,7 @@ const PopularBlogsSection = ({blogs}) => {
                 مطالبی که بیشترین بازدید را داشته‌اند
             </Typography>
             <Grid container justifyContent={'center'} spacing={2} columns={{sm: 12, md: 3}}>
-                {blogs.map((blog) => (
+                {blogs?.map((blog) => (
                     <Grid item sm={12} md={1} key={blog.id}>
                         <Card
                             sx={{

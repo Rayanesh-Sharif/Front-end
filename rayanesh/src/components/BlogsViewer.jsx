@@ -1,58 +1,101 @@
-import {CardContent, CardMedia, Grid, Typography, Card, Container} from "@mui/material";
+import {
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+  Card,
+  Container,
+} from "@mui/material";
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import BlogMeta from "./general/BlogMeta";
 
-const BlogsViewer = ({blogs}) => {
-    const cardStyle = {
-        marginBottom: 3,
-        marginTop: 3,
-        width: '75%',
-        marginLeft: 'auto',
-        marginRight: 'auto'
-    }
+const cardStyle = {
+  marginBottom: 3,
+  marginTop: 3,
+  width: "75%",
+  marginLeft: "auto",
+  marginRight: "auto",
+};
 
-    const mediaStyle = {
-        maxHeight: 130,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        borderRadius: 2,
-        marginTop: 0.5
+const mediaStyle = {
+  maxHeight: 130,
+  marginLeft: "auto",
+  marginRight: "auto",
+  borderRadius: 2,
+  marginTop: 0.5,
+};
+const BlogsViewer = ({
+  blogs,
+  fetchNextPage,
+  hasNextPage,
+  isFetching,
+  isFetchingNextPage,
+  setPage,
+  page,
+}) => {
+  const { ref, inView } = useInView();
+  React.useEffect(() => {
+    if (inView) {
+      setPage((prev) => prev + 1);
+      fetchNextPage();
     }
-    return (
-        <>
-            <Container>
-                {
-                    blogs.map((blog) => (
-                        <Card
-                            raised
-                            sx={cardStyle}
-                            key={blog.id}>
-                            <Grid dir={'rtl'} container>
-                                <Grid item xs={10}>
-                                    <CardContent dir={'rtl'}>
-                                        <Typography variant={'h6'} fontWeight={'bold'} gutterBottom>
-                                            {blog.title}
-                                        </Typography>
-                                        <Typography variant={'body2'} color={'textSecondary'} gutterBottom>
-                                            {blog.description}
-                                        </Typography>
-                                        <BlogMeta blog={blog}/>
-                                    </CardContent>
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <CardMedia sx={mediaStyle}
-                                               image={"https://picsum.photos/1000/1000?random=" + (blog.id + 3)}
-                                               component="img"
-                                               alt={blog.title}
-                                    />
-                                </Grid>
-                            </Grid>
-                        </Card>
-                    ))
-                }
-            </Container>
-        </>
-    )
-}
+  }, [inView]);
+  return (
+    <>
+      <Container>
+        {blogs?.map((blog) => (
+          <Card raised sx={cardStyle} key={blog.id}>
+            <Grid dir={"rtl"} container>
+              <Grid item xs={10}>
+                <CardContent dir={"rtl"}>
+                  <Typography variant={"h6"} fontWeight={"bold"} gutterBottom>
+                    {blog.title}
+                  </Typography>
+                  <Typography
+                    variant={"body2"}
+                    color={"textSecondary"}
+                    gutterBottom
+                  >
+                    {blog.description}
+                  </Typography>
+                  <BlogMeta blog={blog} />
+                </CardContent>
+              </Grid>
+              <Grid item xs={2}>
+                <CardMedia
+                  sx={mediaStyle}
+                  image={
+                    "https://picsum.photos/1000/1000?random=" + (blog.id + 3)
+                  }
+                  component="img"
+                  alt={blog.title}
+                />
+              </Grid>
+            </Grid>
+          </Card>
+        ))}
+        <div>
+          <button
+            ref={ref}
+            onClick={() => {
+              return fetchNextPage();
+            }}
+            disabled={!hasNextPage || isFetchingNextPage}
+          >
+            {isFetchingNextPage
+              ? "Loading more..."
+              : hasNextPage
+              ? "Load Newer"
+              : "Nothing more to load"}
+          </button>
+        </div>
+        <div>
+          {isFetching && !isFetchingNextPage ? "Background Updating..." : null}
+        </div>
+      </Container>
+    </>
+  );
+};
 
 export default BlogsViewer;

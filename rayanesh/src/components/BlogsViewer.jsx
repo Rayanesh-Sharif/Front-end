@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import BlogMeta from "./general/BlogMeta";
+import SkeletonBlog from "./SkeletonBlog";
 
 const cardStyle = {
   marginBottom: 3,
@@ -20,10 +21,11 @@ const cardStyle = {
 
 const mediaStyle = {
   maxHeight: 130,
-  marginLeft: "auto",
+  marginLeft: 1,
   marginRight: "auto",
   borderRadius: 2,
-  marginTop: 0.5,
+  marginTop: 0.9,
+  maxWidth: '75%'
 };
 const BlogsViewer = ({
   blogs,
@@ -47,7 +49,7 @@ const BlogsViewer = ({
         {blogs?.map((blog) => (
           <Card raised sx={cardStyle} key={blog.id}>
             <Grid dir={"rtl"} container>
-              <Grid item xs={10}>
+              <Grid item xs={9}>
                 <CardContent dir={"rtl"}>
                   <Typography variant={"h6"} fontWeight={"bold"} gutterBottom>
                     {blog.title}
@@ -62,7 +64,7 @@ const BlogsViewer = ({
                   <BlogMeta blog={blog} />
                 </CardContent>
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={3}>
                 <CardMedia
                   sx={mediaStyle}
                   image={
@@ -75,7 +77,11 @@ const BlogsViewer = ({
             </Grid>
           </Card>
         ))}
-        <div>
+        <Container>
+          {
+            isFetchingNextPage && <SkeletonBlog />
+          }
+
           <button
             ref={ref}
             onClick={() => {
@@ -89,7 +95,7 @@ const BlogsViewer = ({
               ? "Load Newer"
               : "Nothing more to load"}
           </button>
-        </div>
+        </Container>
         <div>
           {isFetching && !isFetchingNextPage ? "Background Updating..." : null}
         </div>

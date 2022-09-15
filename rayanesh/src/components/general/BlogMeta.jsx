@@ -16,7 +16,6 @@ const theme = createTheme({
 
 const BlogMeta = ({blog}) => {
     return (
-
             <Grid dir={'rtl'} container alignItems="center" spacing={1}>
                 <Grid item columns={4}>
                     <Avatar src={blog.user.image}/>

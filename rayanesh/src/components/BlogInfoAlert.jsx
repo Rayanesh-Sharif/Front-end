@@ -11,7 +11,7 @@ export default function BlogInfoAlert() {
     const [open, setOpen] = React.useState(true);
 
     return (
-        <Box sx={{ width: '100%', marginTop: 2}}>
+        <Box  dir={'rtl'} sx={{ width: '100%', marginTop: 2, flexDirection: 'row-reversed'}}>
             <Collapse in={open}>
                 <Alert
                     severity={'info'}
@@ -27,7 +27,6 @@ export default function BlogInfoAlert() {
                             <CloseIcon fontSize="inherit" />
                         </IconButton>
                     }
-                    sx={{ mb: 2 }}
                 >
                     <Typography >
                         اگه برای نوشتن بلاگ کمک میخوای یه سر به اینجا بزن.

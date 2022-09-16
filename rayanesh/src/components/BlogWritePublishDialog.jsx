@@ -58,8 +58,8 @@ export default function BlogWritePublishDialog({open, setOpen}) {
                 </Grid>
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>انصراف</Button>
-                <Button onClick={handleClose}>انتشار</Button>
+                <Button color={'error'} onClick={handleClose}>انصراف</Button>
+                <Button color={'success'} onClick={handleClose}>انتشار</Button>
             </DialogActions>
         </Dialog>
     )

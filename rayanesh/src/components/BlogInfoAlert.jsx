@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Alert from "@mui/material/Alert";
 import IconButton from "@mui/material/IconButton";
 import Collapse from "@mui/material/Collapse";
-import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import { Typography } from "@mui/material";
 
@@ -27,7 +26,7 @@ export default function BlogInfoAlert() {
                 <CloseIcon fontSize="inherit" />
               </IconButton>
           }
-          sx={{ mb: 2, flexDirection: "row-reverse", "& .MuiAlert-action": {marginRight: 'auto', marginLeft: 0} }}
+          sx={{ mb: 2, "& .MuiAlert-action": {marginRight: 'auto', marginLeft: 0} }}
         >
           <Typography sx={{direction: 'rtl', marginRight: 2}}>
             اگه برای نوشتن بلاگ کمک میخوای یه سر به اینجا بزن.

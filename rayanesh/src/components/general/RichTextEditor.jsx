@@ -181,7 +181,7 @@ const GetEditor = ({data, isReadOnly}) => {
     }, [id, editor, data, isReadOnly]);
 
     return (
-        <div style={{marginTop: '5%'}} id={id}/>
+        <div style={{marginTop: '2%'}} id={id}/>
     )
 }
 export default GetEditor;

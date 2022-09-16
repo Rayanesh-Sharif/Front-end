@@ -77,7 +77,7 @@ const BlogsViewer = ({
             </Grid>
           </Card>
         ))}
-        <Container>
+        <div>
           {
             isFetchingNextPage && <SkeletonBlog />
           }
@@ -95,7 +95,7 @@ const BlogsViewer = ({
               ? "Load Newer"
               : "Nothing more to load"}
           </button>
-        </Container>
+        </div>
         <div>
           {isFetching && !isFetchingNextPage ? "Background Updating..." : null}
         </div>

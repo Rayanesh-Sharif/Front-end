@@ -13,12 +13,13 @@ const mediaStyle = {
     marginLeft: 1,
     marginRight: "auto",
     borderRadius: 2,
-    marginTop: 0.9,
-    maxWidth: '75%'
+    marginTop: 0.6,
+    maxWidth: '75%',
+    marginBottom: 0.4
 };
 
 function SkeletonBlog() {
-    return (
+    return [...Array(3)].map((e, i) =>
         <Card raised sx={cardStyle}>
             <Grid dir={"rtl"} container>
                 <Grid item xs={9}>
@@ -59,11 +60,11 @@ function SkeletonBlog() {
                 </Grid>
 
                 <Grid item xs={3}>
-                    <Skeleton variant={'rectangular'} height={100} sx={mediaStyle}/>
+                    <Skeleton variant={'rectangular'} height={'92%'} sx={mediaStyle}/>
                 </Grid>
             </Grid>
         </Card>
-    )
+    );
 }
 
 export default SkeletonBlog

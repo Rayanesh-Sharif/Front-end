@@ -18,7 +18,7 @@ const pages = ['صفحه اصلی', 'درباره ما', 'رایان نامه', 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ColorAppBar = styled(AppBar)(({theme}) => ({
-    backgroundColor: '#1a844f'
+    backgroundColor: '#14937e'
 }));
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);

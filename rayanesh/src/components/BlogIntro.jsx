@@ -9,7 +9,7 @@ const ColorButton = styled(Button)(({theme}) => ({
     marginTop: 13,
     borderColor: 'white',
     color: 'white',
-    backgroundColor: '#1a844f',
+    backgroundColor: '#14937e',
     '&:hover': {
         borderColor: 'white'
     }
@@ -20,7 +20,7 @@ const BlogIntro = () => {
 
     return (
         <Container>
-            <Paper elevation={3} sx={{backgroundColor: '#1a844f', width: '100%', margin: 'auto'}}>
+            <Paper elevation={3} sx={{backgroundColor: '#14937e', width: '100%', margin: 'auto'}}>
                 <Grid
                     marginTop={3}
                     container dir={'rtl'}

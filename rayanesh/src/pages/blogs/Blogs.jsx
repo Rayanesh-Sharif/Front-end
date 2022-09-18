@@ -8,7 +8,7 @@ import mapBlogsToUser from "../../helpers/mapBlogsToUser";
 import { useState } from 'react';
 
 function Blogs() {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
   const { popularPosts, popularPostsStatus } = useGetPopularPosts();
   const { recentPosts, recentPostsStatus, fetchNextPage, hasNextPage, isFetching, isFetchingNextPage } =
     useGetRecentPosts(page);

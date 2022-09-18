@@ -11,8 +11,14 @@ import {
 } from "@mui/material";
 
 
-export default function BlogWritePublishDialog({open, setOpen}) {
+export default function BlogWritePublishDialog({open, setOpen, editorId}) {
     const handleClose = () => setOpen(false)
+    const editor = document.getElementById(editorId)
+    console.log(editor)
+    const handleSave = () => {
+        editor.save().then(outputData => console.log(outputData))
+    }
+
     return (
         <Dialog sx={{direction: 'rtl'}} open={open} onClose={handleClose}>
             <DialogTitle>انتشار مطلب</DialogTitle>
@@ -47,7 +53,7 @@ export default function BlogWritePublishDialog({open, setOpen}) {
                             accept="image/*"
                             type="file"
                             id="select-image"
-                            style={{ display: 'none' }}
+                            style={{display: 'none'}}
                         />
                         <label htmlFor="select-image">
                             <Button variant="contained" color="primary" component="span">
@@ -59,7 +65,7 @@ export default function BlogWritePublishDialog({open, setOpen}) {
             </DialogContent>
             <DialogActions>
                 <Button color={'error'} onClick={handleClose}>انصراف</Button>
-                <Button color={'success'} onClick={handleClose}>انتشار</Button>
+                <Button color={'success'} onClick={handleSave}>انتشار</Button>
             </DialogActions>
         </Dialog>
     )

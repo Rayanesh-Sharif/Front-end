@@ -1,6 +1,6 @@
 import EditorJS from '@editorjs/editorjs';
 import Header from "@editorjs/header";
-import {useEffect, useId, useState} from "react";
+import {useEffect, useState} from "react";
 import AlignmentTuneTool from 'editorjs-text-alignment-blocktune';
 import ImageTool from '@editorjs/image';
 import Delimiter from '@editorjs/delimiter';
@@ -11,7 +11,7 @@ import CodeTool from '@editorjs/code';
 import ToggleBlock from 'editorjs-toggle-block'
 
 const initEditor = ({id, data, isReadOnly}) => {
-    return new EditorJS({
+    return  new EditorJS({
             holder: id,
             placeholder: 'هر آنچه دل تنگت خواست',
             readOnly: isReadOnly,
@@ -163,8 +163,7 @@ const initEditor = ({id, data, isReadOnly}) => {
 }
 
 
-const GetEditor = ({data, isReadOnly}) => {
-    const id = useId();
+const GetEditor = ({data, isReadOnly, id}) => {
     const [editor, setEditor] = useState(null);
     useEffect(() => {
         setEditor((prevEditor) => {
@@ -173,11 +172,6 @@ const GetEditor = ({data, isReadOnly}) => {
             }
             return null;
         });
-        return () => {
-            if (editor) {
-                editor.destroy();
-            }
-        };
     }, [id, editor, data, isReadOnly]);
 
     return (

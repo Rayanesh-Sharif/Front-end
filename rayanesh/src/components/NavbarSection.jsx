@@ -13,8 +13,26 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import {images} from "../constants";
 import {styled} from "@mui/material/styles";
+import {useNavigate} from "react-router-dom";
 
-const pages = ['صفحه اصلی', 'درباره ما', 'رایان نامه', 'بلاگ ها'];
+const pages = [
+    {
+        title: 'صفحه اصلی',
+        path: '/',
+    },
+    {
+        title: 'درباره ما',
+        path: '/about',
+    },
+    {
+        title: 'رایان نامه',
+        path: '/mail',
+    },
+    {
+        title: 'بلاگ ها',
+        path: '/blogs',
+    }
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ColorAppBar = styled(AppBar)(({theme}) => ({
@@ -23,6 +41,7 @@ const ColorAppBar = styled(AppBar)(({theme}) => ({
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const navigate = useNavigate();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -43,15 +62,15 @@ const ResponsiveAppBar = () => {
         <ColorAppBar dir={'rtl'} position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                        <img
-                            width='50'
-                            height='30'
-                            src={images.Logo}
-                            alt={'رایانش'}
-                        />
+                    <img
+                        width='50'
+                        height='30'
+                        src={images.Logo}
+                        alt={'رایانش'}
+                    />
 
 
-                    <Box sx={{marginRight:1, flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
+                    <Box sx={{marginRight: 1, flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -81,21 +100,29 @@ const ResponsiveAppBar = () => {
                             }}
                         >
                             {
-                                pages?.map((p) => (
-                                <MenuItem key={p} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{p}</Typography>
-                                </MenuItem>
-                            ))}
+                                pages?.map((item) => (
+                                    <MenuItem key={item.title} onClick={
+                                        () => {
+                                            navigate(item.path);
+                                        }
+                                    }>
+                                        <Typography textAlign="center">{item.title}</Typography>
+                                    </MenuItem>
+                                ))}
                         </Menu>
                     </Box>
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
-                        {pages?.map((page) => (
+                        {pages?.map((item) => (
                             <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
+                                key={item.title}
+                                onClick={
+                                    () => {
+                                        navigate(item.path);
+                                    }
+                                }
                                 sx={{my: 2, color: 'white', display: 'block'}}
                             >
-                                {page}
+                                {item.title}
                             </Button>
                         ))}
                     </Box>

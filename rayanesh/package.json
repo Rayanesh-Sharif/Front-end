@@ -30,7 +30,7 @@
     "editorjs-alert": "^1.0.3",
     "editorjs-header-with-alignment": "^1.0.1",
     "editorjs-text-alignment-blocktune": "^1.0.3",
-    "editorjs-toggle-block": "^0.2.7",
+    "editorjs-toggle-block": "^0.3.0",
     "json-server": "^0.17.0",
     "moment": "^2.29.4",
     "node-sass": "^7.0.1",

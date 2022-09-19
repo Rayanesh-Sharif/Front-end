@@ -1,5 +1,4 @@
 import {
-    Box,
     Button,
     Dialog,
     DialogActions,
@@ -10,14 +9,11 @@ import {
     TextField, 
 } from "@mui/material";
 
+import {saveEditor} from "./general/RichTextEditor";
 
-export default function BlogWritePublishDialog({open, setOpen, editorId}) {
+
+export default function BlogWritePublishDialog({open, setOpen}) {
     const handleClose = () => setOpen(false)
-    const editor = document.getElementById(editorId)
-    console.log(editor)
-    const handleSave = () => {
-        editor.save().then(outputData => console.log(outputData))
-    }
 
     return (
         <Dialog sx={{direction: 'rtl'}} open={open} onClose={handleClose}>
@@ -65,7 +61,7 @@ export default function BlogWritePublishDialog({open, setOpen, editorId}) {
             </DialogContent>
             <DialogActions>
                 <Button color={'error'} onClick={handleClose}>انصراف</Button>
-                <Button color={'success'} onClick={handleSave}>انتشار</Button>
+                <Button color={'success'} onClick={saveEditor}>انتشار</Button>
             </DialogActions>
         </Dialog>
     )

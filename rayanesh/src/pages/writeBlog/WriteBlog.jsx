@@ -1,6 +1,6 @@
 import React, {useId, useState} from 'react';
-import GetEditor from '../../components/general/RichTextEditor';
-import {Container, Input} from "@mui/material";
+import RichTextEditor from '../../components/general/RichTextEditor';
+import {Container} from "@mui/material";
 import BlogInfoAlert from "../../components/BlogInfoAlert";
 import BlogSpeedDial from "../../components/BlogSpeedDial";
 import BlogWritePublishDialog from "../../components/BlogWritePublishDialog";
@@ -13,7 +13,7 @@ function WriteBlog() {
     return (
         <Container>
             <BlogInfoAlert/>
-            <GetEditor data={null} isReadOnly={false} id={id}/>
+            <RichTextEditor data={null} isReadOnly={false} id={id}/>
             <BlogSpeedDial setOpen={setOpen}/>
             <BlogWritePublishDialog open={open} setOpen={setOpen} editorId={id}/>
         </Container>

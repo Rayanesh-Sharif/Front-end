@@ -67,7 +67,7 @@ const BlogsViewer = ({
                                     <BlogMeta blog={blog}/>
                                 </CardContent>
                             </Grid>
-                            <Grid item xs={3}>
+                            <Grid item xs={3} sx={{alignSelf: 'center'}}>
                                 <CardMedia
                                     sx={mediaStyle}
                                     image={
@@ -87,6 +87,7 @@ const BlogsViewer = ({
 
                     <button
                         ref={ref}
+                        style={{display: 'none'}}
                         onClick={() => {
                             return fetchNextPage();
                         }}

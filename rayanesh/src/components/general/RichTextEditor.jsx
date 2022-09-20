@@ -82,7 +82,6 @@ const initEditor = ({id, data, isReadOnly}) => {
         },
 
         i18n: {
-            direction: "rtl",
             messages: {
                 ui: {
                     toolbar: {

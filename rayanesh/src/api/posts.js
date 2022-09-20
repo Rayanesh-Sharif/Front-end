@@ -9,8 +9,7 @@ export async function fetchPopularPosts() {
 }
 
 export async function fetchRecentBlogs({pageParam=0, pageLimit=3}) {
-    console.log(pageParam)
-    //delay for 5 seconds
+    //delay for 2 seconds
     await new Promise(resolve => setTimeout(resolve, 2000))
     const {data} = await handleRequests({
         url: `posts?_sort=date&_order=desc&_page=${pageParam}&_limit=${pageLimit}`,

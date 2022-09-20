@@ -22,10 +22,11 @@ const BlogIntro = () => {
         <Container>
             <Paper elevation={3} sx={{backgroundColor: '#14937e', width: '100%', margin: 'auto'}}>
                 <Grid
+                    alignItems={'center'}
                     marginTop={3}
                     container dir={'rtl'}
                 >
-                    <Grid item lg={1} marginRight={3}>
+                    <Grid item lg={1} md={'auto'} marginRight={3}>
                         <Typography
                             variant={'h3'}
                             color={"white"}
@@ -34,7 +35,7 @@ const BlogIntro = () => {
                             در
                         </Typography>
                     </Grid>
-                    <Grid item lg={2}>
+                    <Grid item lg={2} md={'auto'}>
                         <Typography
                             fontWeight={'bold'}
                             variant={'h3'}
@@ -45,7 +46,7 @@ const BlogIntro = () => {
                             [رایانش]
                         </Typography>
                     </Grid>
-                    <Grid item lg={4} marginRight={1}>
+                    <Grid item lg={4} md={'auto'} marginRight={1}>
                         <Typography
                             variant={'h3'}
                             color="white"
@@ -55,7 +56,7 @@ const BlogIntro = () => {
                             بخوانید و بنویسید
                         </Typography>
                     </Grid>
-                    <Grid dir={'ltr'} item lg={4}>
+                    <Grid dir={'ltr'} item lg={4} md={'auto'}>
                         <ColorButton
                             variant="outlined"
                             endIcon={<SendIcon/>}

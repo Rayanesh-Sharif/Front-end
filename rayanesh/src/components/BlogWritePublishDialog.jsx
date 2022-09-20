@@ -16,7 +16,7 @@ export default function BlogWritePublishDialog({open, setOpen}) {
     const handleClose = () => setOpen(false)
 
     return (
-        <Dialog sx={{direction: 'rtl'}} open={open} onClose={handleClose}>
+        <Dialog open={open} onClose={handleClose}>
             <DialogTitle>انتشار مطلب</DialogTitle>
             <DialogContent>
                 <DialogContentText mb={'5%'}>
@@ -24,7 +24,7 @@ export default function BlogWritePublishDialog({open, setOpen}) {
                     کنید.
                 </DialogContentText>
                 <Grid container spacing={2}>
-                    <Grid sx={{direction: 'rtl'}} item xs={12}>
+                    <Grid  item xs={12}>
                         <TextField
                             required
                             fullWidth

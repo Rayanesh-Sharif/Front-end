@@ -26,9 +26,9 @@ export default function BlogInfoAlert() {
                 <CloseIcon fontSize="inherit" />
               </IconButton>
           }
-          sx={{ mb: 2, "& .MuiAlert-action": {marginRight: 'auto', marginLeft: 0} }}
+          sx={{ mb: 2}}
         >
-          <Typography sx={{direction: 'rtl', marginRight: 2}}>
+          <Typography sx={{marginRight: 2}}>
             اگه برای نوشتن بلاگ کمک میخوای یه سر به اینجا بزن.
           </Typography>
         </Alert>

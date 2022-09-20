@@ -18,9 +18,9 @@ const mediaStyle = {
     marginBottom: 0.4
 };
 
-function SkeletonBlog() {
-    return [...Array(3)].map((e, i) =>
-        <Card raised sx={cardStyle}>
+function SkeletonBlog({repeat = 3}) {
+    return [...Array(repeat)].map((i) =>
+        <Card raised sx={cardStyle} key={i}>
             <Grid dir={"rtl"} container>
                 <Grid item xs={9}>
                     <CardContent dir={"rtl"}>
@@ -36,7 +36,7 @@ function SkeletonBlog() {
                         />
 
                         <Grid dir={'rtl'} container alignItems="center" spacing={1}>
-                            <Grid item xs={1}>
+                            <Grid  item lg={1} md={1} sm={1.8} xs={2.5}>
                                 <Skeleton
                                     animation={'wave'}
                                     variant={'circular'}

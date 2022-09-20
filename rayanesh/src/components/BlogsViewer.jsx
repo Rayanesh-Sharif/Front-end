@@ -6,6 +6,7 @@ import {
     Card,
     Container,
 } from "@mui/material";
+import LoadingButton from '@mui/lab/LoadingButton';
 import React from "react";
 import {useInView} from "react-intersection-observer";
 import BlogMeta from "./general/BlogMeta";
@@ -49,6 +50,7 @@ const BlogsViewer = ({
     return (
         <>
             <Container>
+
                 {blogs?.map((blog) => (
                     <Card raised sx={cardStyle} key={blog.id}>
                         <Grid dir={"rtl"} container>
@@ -84,21 +86,22 @@ const BlogsViewer = ({
                     {
                         isFetchingNextPage && <SkeletonBlog/>
                     }
-
-                    <button
-                        ref={ref}
-                        style={{display: 'none'}}
-                        onClick={() => {
-                            return fetchNextPage();
-                        }}
-                        disabled={!hasNextPage || isFetchingNextPage}
-                    >
-                        {isFetchingNextPage
-                            ? "Loading more..."
-                            : hasNextPage
-                                ? "Load Newer"
-                                : "Nothing more to load"}
-                    </button>
+                    <Grid container justifyContent={'center'}>
+                        <LoadingButton
+                            loading
+                            ref={ref}
+                            onClick={() => {
+                                return fetchNextPage();
+                            }}
+                            disabled={!hasNextPage || isFetchingNextPage}
+                        >
+                            {isFetchingNextPage
+                                ? "Loading more..."
+                                : hasNextPage
+                                    ? "Load Newer"
+                                    : "Nothing more to load"}
+                        </LoadingButton>
+                    </Grid>
                 </div>
                 <div>
                     {isFetching && !isFetchingNextPage ? "Background Updating..." : null}

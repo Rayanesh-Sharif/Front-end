@@ -61,7 +61,7 @@ export default function BlogWritePublishDialog({open, setOpen}) {
             </DialogContent>
             <DialogActions>
                 <Button color={'error'} onClick={handleClose}>انصراف</Button>
-                <Button color={'success'} onClick={saveEditor}>انتشار</Button>
+                <Button color={'success'} onClick={() => saveEditor()}>انتشار</Button>
             </DialogActions>
         </Dialog>
     )

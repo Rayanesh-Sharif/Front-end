@@ -17,3 +17,11 @@ export async function fetchRecentBlogs({pageParam=0, pageLimit=3}) {
     })
     return data
 }
+
+export async function fetchPostById({postId}) {
+    const {data} = await handleRequests({
+        url: `posts/${postId}`,
+        method: 'GET'
+    })
+    return data
+}

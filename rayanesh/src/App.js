@@ -5,11 +5,12 @@ import Blogs from "./pages/blogs/Blogs";
 import NavbarSection from "./components/NavbarSection";
 import React from "react";
 import {createTheme, ThemeProvider} from "@mui/material";
-import WriteBlog from "./pages/writeBlog/WriteBlog";
+import WriteBlog from "./pages/BlogViewer/WriteBlog";
 import rtlPlugin from "stylis-plugin-rtl";
 import {CacheProvider} from "@emotion/react";
 import createCache from "@emotion/cache";
 import {prefixer} from "stylis";
+import ReadBlog from "./pages/BlogViewer/ReadBlog";
 
 const cacheRtl = createCache({
     key: "muirtl",
@@ -42,6 +43,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<LandingPage/>}/>
                             <Route path="/blogs" element={<Blogs/>}/>
+                            <Route path="/blogs/:id" element={<ReadBlog/>} />
                             <Route path="/blogs/write" element={<WriteBlog/>}/>
                             <Route path="*" element={<NotFound/>}/>
                         </Routes>

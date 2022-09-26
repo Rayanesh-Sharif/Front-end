@@ -21,7 +21,7 @@ export default function BlogSpeedDial({setOpen}) {
         }
     ];
     return (
-        <AppBar position={'fixed'} elevation={0} sx={{top: 'auto', bottom: 0, backgroundColor: 'white'}}>
+        <AppBar position={'fixed'} elevation={0} sx={{top: 'auto', bottom: 0, backgroundColor: 'white', maxHeight: 20}}>
             <Box  sx={{height: 100, transform: 'translateZ(0px)', flexGrow: 1}}>
                 <SpeedDial
                     ariaLabel="SpeedDial basic example"

@@ -4,13 +4,14 @@ import {
     Grid,
     Typography,
     Card,
-    Container,
+    Container, CardActionArea,
 } from "@mui/material";
 import LoadingButton from '@mui/lab/LoadingButton';
 import React from "react";
 import {useInView} from "react-intersection-observer";
 import BlogMeta from "./general/BlogMeta";
 import SkeletonBlog from "./SkeletonBlog";
+import {useNavigate} from "react-router-dom";
 
 const cardStyle = {
     marginBottom: 3,
@@ -27,9 +28,9 @@ const mediaStyle = {
     maxHeight: 130,
     marginLeft: 1,
     marginRight: "auto",
+    marginTop: "auto",
     borderRadius: 2,
-    marginTop: 0.9,
-    maxWidth: '75%'
+    maxWidth: '75%',
 };
 const BlogsViewer = ({
                          blogs,
@@ -47,44 +48,50 @@ const BlogsViewer = ({
             fetchNextPage();
         }
     }, [inView]);
+    const navigate = useNavigate();
     return (
         <>
             <Container>
 
                 {blogs?.map((blog) => (
-                    <Card raised sx={cardStyle} key={blog.id}>
-                        <Grid dir={"rtl"} container>
-                            <Grid item xs={9}>
-                                <CardContent dir={"rtl"}>
-                                    <Typography variant={"h6"} fontWeight={"bold"} gutterBottom>
-                                        {blog.title}
-                                    </Typography>
-                                    <Typography
-                                        variant={"body2"}
-                                        color={"textSecondary"}
-                                        gutterBottom
-                                    >
-                                        {blog.description}
-                                    </Typography>
-                                    <BlogMeta blog={blog}/>
-                                </CardContent>
+                    <Card raised sx={cardStyle}
+                          onClick={() => navigate(`/blogs/${blog.id}`)}
+                          key={blog.id}
+                    >
+                        <CardActionArea>
+                            <Grid dir={"rtl"} container>
+                                <Grid item xs={9}>
+                                    <CardContent dir={"rtl"}>
+                                        <Typography variant={"h6"} fontWeight={"bold"} gutterBottom>
+                                            {blog.title}
+                                        </Typography>
+                                        <Typography
+                                            variant={"body2"}
+                                            color={"textSecondary"}
+                                            gutterBottom
+                                        >
+                                            {blog.description}
+                                        </Typography>
+                                        <BlogMeta blog={blog}/>
+                                    </CardContent>
+                                </Grid>
+                                <Grid item xs={3} sx={{alignSelf: 'center'}}>
+                                    <CardMedia
+                                        sx={mediaStyle}
+                                        image={
+                                            "https://picsum.photos/1000/1000?random=" + (blog.id + 3)
+                                        }
+                                        component="img"
+                                        alt={blog.title}
+                                    />
+                                </Grid>
                             </Grid>
-                            <Grid item xs={3} sx={{alignSelf: 'center'}}>
-                                <CardMedia
-                                    sx={mediaStyle}
-                                    image={
-                                        "https://picsum.photos/1000/1000?random=" + (blog.id + 3)
-                                    }
-                                    component="img"
-                                    alt={blog.title}
-                                />
-                            </Grid>
-                        </Grid>
+                        </CardActionArea>
                     </Card>
                 ))}
                 <div>
                     {
-                        isFetchingNextPage && <SkeletonBlog/>
+                        isFetchingNextPage && <SkeletonBlog times={page}/>
                     }
                     <Grid container justifyContent={'center'}>
                         <LoadingButton

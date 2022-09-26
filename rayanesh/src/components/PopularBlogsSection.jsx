@@ -10,9 +10,11 @@ import {
 } from "@mui/material";
 import BlogMeta from "./general/BlogMeta";
 import Image from "./general/Image";
+import {useNavigate} from "react-router-dom";
 
 
 const PopularBlogsSection = ({blogs}) => {
+    const navigate = useNavigate();
     return (
         <Container>
             <Typography variant={"h6"} dir={"rtl"} fontWeight={'bold'} marginTop={5}>
@@ -30,9 +32,12 @@ const PopularBlogsSection = ({blogs}) => {
                                     boxShadow: 20,
                                 }
                             }}
+
+                            onClick={() => navigate(`/blogs/${blog.id}`)}
+
                         >
                             <CardActionArea>
-                                <CardMedia sx={{height:275, width:'100%'}}>
+                                <CardMedia sx={{height: 275, width: '100%'}}>
                                     <Image
                                         width='100%'
                                         height='100%'

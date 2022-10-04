@@ -1,16 +1,17 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import LandingPage from "./pages/landingPage/LandingPage";
-import NotFound from "./pages/notFound/NotFound";
-import Blogs from "./pages/blogs/Blogs";
 import NavbarSection from "./components/NavbarSection";
+import SignUp from "./pages/signUp/SignUp";
 import React from "react";
 import {createTheme, ThemeProvider} from "@mui/material";
-import WriteBlog from "./pages/BlogViewer/WriteBlog";
 import rtlPlugin from "stylis-plugin-rtl";
 import {CacheProvider} from "@emotion/react";
 import createCache from "@emotion/cache";
 import {prefixer} from "stylis";
+import Blogs from "./pages/blogs/Blogs";
 import ReadBlog from "./pages/BlogViewer/ReadBlog";
+import WriteBlog from "./pages/BlogViewer/WriteBlog";
+import NotFound from "./pages/notFound/NotFound";
 
 const cacheRtl = createCache({
     key: "muirtl",
@@ -38,14 +39,14 @@ function App() {
         <CacheProvider value={cacheRtl}>
             <ThemeProvider theme={theme}>
                 <Router>
-                    <NavbarSection loggedIn={false}/>
                     <div className="App">
                         <Routes>
                             <Route path="/" element={<LandingPage/>}/>
                             <Route path="/blogs" element={<Blogs/>}/>
-                            <Route path="/blogs/:id" element={<ReadBlog/>} />
+                            <Route path="/blogs/:id" element={<ReadBlog/>}/>
                             <Route path="/blogs/write" element={<WriteBlog/>}/>
                             <Route path="*" element={<NotFound/>}/>
+                            <Route path="/signup" element={<SignUp/>}/>
                         </Routes>
                     </div>
                 </Router>

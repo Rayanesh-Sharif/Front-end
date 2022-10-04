@@ -13,13 +13,14 @@ const mediaStyle = {
     marginLeft: 1,
     marginRight: "auto",
     borderRadius: 2,
-    marginTop: 0.6,
+    marginTop: "0.2rem",
+    marginBottom: "auto",
     maxWidth: '75%',
-    marginBottom: 0.4
+
 };
 
 function SkeletonBlog({repeat = 3}) {
-    return [...Array(repeat)].map((i) =>
+    return [...Array(repeat)].map((e, i) =>
         <Card raised sx={cardStyle} key={i}>
             <Grid dir={"rtl"} container>
                 <Grid item xs={9}>

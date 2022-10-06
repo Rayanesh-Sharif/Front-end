@@ -62,7 +62,7 @@ function SignUp() {
     });
 
     return (
-        <Container  sx={{backgroundImage: `url(${images.Curve})`, height: '100vh', backgroundSize: 'cover'}}>
+        <Container maxWidth="100%" sx={{backgroundImage: `url(${images.Curve})`, height: '100vh', backgroundSize: 'cover', display: 'flex'}}>
             <Container sx={{backgroundColor: 'white'}} component="main"
                        maxWidth="xs">
                 <CssBaseline/>

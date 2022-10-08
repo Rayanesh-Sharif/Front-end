@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import {images} from "../constants";
 import {styled} from "@mui/material/styles";
 import {useNavigate} from "react-router-dom";
-import {useSignIn} from "../hooks/useSignIn";
+import {useLogin} from "../hooks/useLogin";
 
 const pages = [
     {
@@ -53,7 +53,7 @@ const SignUpLoginButton = styled(Button)(
 
 const NavbarSection = () => {
 
-    const {isRegistered} = useSignIn();
+    const {isRegistered} = useLogin();
 
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);

@@ -591,22 +591,30 @@
   "users": [
     {
       "id": 1,
-      "name": "آرش یادگاری",
+      "email": "random@rand.ir",
+      "username": "آرش یادگاری",
+      "password": "12345678",
       "image": "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
     },
     {
       "id": 2,
-      "name": "آرمین نوردی",
+      "email": "random@rand.ir",
+      "username": "آرمین نوردی",
+      "password": "12345678",
       "image": "https://mdbcdn.b-cdn.net/img/new/avatars/3.webp"
     },
     {
       "id": 3,
-      "name": "زن کاظمک",
+      "email": "random@rand.ir",
+      "username": "زن کاظمک",
+      "password": "12345678",
       "image": "https://mdbcdn.b-cdn.net/img/new/avatars/12.webp"
     },
     {
       "id": 4,
-      "name": "رایانش",
+      "email": "random@rand.ir",
+      "username": "رایانش",
+      "password": "12345678",
       "image": ""
     }
   ]

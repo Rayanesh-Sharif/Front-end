@@ -1,7 +1,6 @@
 import React from 'react';
 import {StrictMode} from "react";
 import {createRoot} from "react-dom/client";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import './index.css';
 import App from './App';
 import './assets/fonts/Vazir.ttf'
@@ -9,9 +8,7 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
     <StrictMode>
-        <QueryClientProvider client={new QueryClient()}>
             <App/>
-        </QueryClientProvider>
     </StrictMode>
 );
 

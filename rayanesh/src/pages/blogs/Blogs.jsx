@@ -6,6 +6,7 @@ import useGetRecentPosts from "../../hooks/useGetRecentPosts";
 import useGetUsers from "../../hooks/useGetUsers";
 import mapBlogsToUser from "../../helpers/mapBlogsToUser";
 import { useState } from 'react';
+import Page from "../../components/general/Page";
 
 function Blogs() {
   const [page, setPage] = useState(2);
@@ -37,7 +38,7 @@ function Blogs() {
     const popularBlogsWithUser = mapBlogsToUser({ blogs: popularPosts, users });
     const recentBlogsWithUser = mapBlogsToUser({ blogs: posts, users });
     return (
-      <>
+      <Page>
         <PopularBlogsSection blogs={popularBlogsWithUser} />
         <BlogIntro />
         <BlogsViewer
@@ -49,7 +50,7 @@ function Blogs() {
           setPage={setPage}
           page={page}
         />
-      </>
+      </Page>
     );
   }
 }

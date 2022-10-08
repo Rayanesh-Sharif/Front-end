@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useFormik} from "formik";
 import {
     Avatar,
@@ -8,13 +8,11 @@ import {
     Typography
 } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
-import displayToast from "../../toast/customToast";
 import useSignup from "../../hooks/useSignup";
 import {Field, FormLogo, PasswordField, SubmitButton} from "../../components/general/FormComponent";
 import {images} from "../../constants";
 import {signUpSchema} from "../../validationSchema/allSchemas";
 import {Link} from "react-router-dom";
-import {toast} from "react-toastify";
 
 
 const mainContainerStyle = {
@@ -45,13 +43,11 @@ function Signup() {
         },
         validationSchema: signUpSchema,
         onSubmit: (values) => {
-            displayToast('ثبت نام با موفقیت انجام شد')
             const user = {
                 username: values.username,
                 password: values.password,
                 email: values.email
             }
-            console.log(mutation)
             mutation.mutate(user)
         },
     });

@@ -1,10 +1,21 @@
-import { useContext } from "react";
-import { loginContext } from '../context/LoginContextProvider';
-export function useLogin() {
-    const context = useContext(loginContext);
+import {getToken} from "../api/users";
+import displayToast from "../toast/customToast";
+import {useNavigate} from "react-router-dom";
+import {useSetUserLoginStatus} from "./useSetUserLoginStatus";
+import {useMutation} from "@tanstack/react-query";
 
-    if (context === undefined) {
-        throw new Error("useForm must be used within a FormContextProvider");
-    }
-    return context;
+export default function useLogin() {
+    const navigate = useNavigate();
+    const {setIsRegistered} = useSetUserLoginStatus()
+    const mutation = useMutation(getToken, {
+        onSuccess: (data) => {
+            localStorage.setItem("access_token", data.token);
+            setIsRegistered(true);
+            const message = "اطلاعات با موفقیت ارسال شدند.";
+            displayToast(message);
+            navigate("/blogs");
+        }
+    });
+
+    return {mutation};
 }

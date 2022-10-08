@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import {images} from "../constants";
 import {styled} from "@mui/material/styles";
 import {useNavigate} from "react-router-dom";
-import {useLogin} from "../hooks/useLogin";
+import {useSetUserLoginStatus} from "../hooks/useSetUserLoginStatus";
 
 const pages = [
     {
@@ -53,7 +53,7 @@ const SignUpLoginButton = styled(Button)(
 
 const NavbarSection = () => {
 
-    const {isRegistered} = useLogin();
+    const {isRegistered} = useSetUserLoginStatus();
 
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -142,23 +142,21 @@ const NavbarSection = () => {
                     </Box>
 
                     <Box>
-                        <SignUpLoginButton color={'success'} variant='contained' onClick={
+                        {!isRegistered && <SignUpLoginButton color={'success'} variant='contained' onClick={
                             () => {
                                 navigate('/signup');
                             }
                         }>
-                            {isRegistered &&
-                                <Avatar
-                                    alt="something shit"
-                                    src="/static/images/avatar/2.jpg"
-                                />
-                            }
-                            {!isRegistered &&
-                                <Typography variant={'body1'}>
-                                    ثبت نام/ورود
-                                </Typography>
-                            }
-                        </SignUpLoginButton>
+                            <Typography variant={'body1'}>
+                                ثبت نام/ورود
+                            </Typography>
+                        </SignUpLoginButton>}
+                        {isRegistered &&
+                            <Avatar
+                                alt="something shit"
+                                src="/static/images/avatar/2.jpg"
+                            />
+                        }
                     </Box>
                 </Toolbar>
             </Container>

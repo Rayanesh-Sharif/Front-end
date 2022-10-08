@@ -7,17 +7,14 @@ import {
     Container,
     CssBaseline,
     FormControlLabel, Grid,
-    InputAdornment,
     Typography
 } from "@mui/material";
-import PersonIcon from '@mui/icons-material/Person';
 import LoginIcon from '@mui/icons-material/Login';
-import displayToast from "../../toast/customToast";
-import useSignup from "../../hooks/useSignup";
 import {Field, FormLogo, PasswordField, SubmitButton} from "../../components/general/FormComponent";
 import {images} from "../../constants";
-import {signInSchema, signUpSchema} from "../../validationSchema/allSchemas";
-import {Link, Router} from "react-router-dom";
+import {signInSchema} from "../../validationSchema/allSchemas";
+import {Link} from "react-router-dom";
+import useLogin from "../../hooks/useLogin";
 
 
 const mainContainerStyle = {
@@ -38,8 +35,7 @@ const formStyle = {
 
 
 function Login() {
-
-    const {sendSignInInfo} = useSignup();
+    const {mutation} = useLogin();
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -48,8 +44,7 @@ function Login() {
         },
         validationSchema: signInSchema,
         onSubmit: (values) => {
-            displayToast('به رایانش خوش آمدید')
-            sendSignInInfo(values)
+            mutation.mutate(values)
         },
     });
 

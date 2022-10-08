@@ -10,11 +10,19 @@ export async function fetchUserById({userId}) {
 
 
 export async function postUser(user) {
-    console.log(user)
     const {data} = await handleRequests({
         url: 'users',
         method: 'POST',
         data: user
+    })
+    return data
+}
+
+export async function getToken({username, password}) {
+    const {data} = await handleRequests({
+        url: 'tokens',
+        method: 'POST',
+        data: {username, password}
     })
     return data
 }

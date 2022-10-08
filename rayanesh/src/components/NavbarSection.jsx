@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import {images} from "../constants";
 import {styled} from "@mui/material/styles";
 import {useNavigate} from "react-router-dom";
+import {useSignIn} from "../hooks/useSignIn";
 
 const pages = [
     {
@@ -50,8 +51,11 @@ const SignUpLoginButton = styled(Button)(
     }
 )
 
-const NavbarSection = ({loggedIn = 'false'}) => {
-    console.log('is log in : ', loggedIn)
+const NavbarSection = () => {
+
+    const {isRegistered} = useSignIn();
+
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const navigate = useNavigate();
 
@@ -138,18 +142,18 @@ const NavbarSection = ({loggedIn = 'false'}) => {
                     </Box>
 
                     <Box>
-                        <SignUpLoginButton color={'success'} variant='contained' onClick = {
+                        <SignUpLoginButton color={'success'} variant='contained' onClick={
                             () => {
                                 navigate('/signup');
                             }
                         }>
-                            {loggedIn &&
+                            {isRegistered &&
                                 <Avatar
                                     alt="something shit"
                                     src="/static/images/avatar/2.jpg"
                                 />
                             }
-                            {!loggedIn &&
+                            {!isRegistered &&
                                 <Typography variant={'body1'}>
                                     ثبت نام/ورود
                                 </Typography>

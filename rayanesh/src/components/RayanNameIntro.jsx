@@ -2,7 +2,6 @@ import {images} from "../constants";
 import {Button, Container, Divider, Grid, Typography} from "@mui/material";
 import {styled} from "@mui/material/styles";
 import {useNavigate} from "react-router-dom";
-import ScrollTrigger from 'mui-scroll-trigger'
 
 const containerStyle = {
     borderRadius: '10px',

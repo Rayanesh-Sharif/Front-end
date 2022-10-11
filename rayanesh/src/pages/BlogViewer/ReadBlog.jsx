@@ -3,7 +3,7 @@ import RichTextEditor from "../../components/general/RichTextEditor";
 import { useParams } from "react-router-dom";
 import useGetSinglePost from "../../hooks/useGetSinglePost";
 import useGetSingleUser from "../../hooks/useGetSingleUser";
-import { useEffect, useState } from "react";
+import Page from "../../components/general/Page";
 
 function ReadBlog() {
   let params = useParams();
@@ -19,9 +19,9 @@ function ReadBlog() {
     postStatus === "success" && userStatus === "success" && isEnable;
   if (isDataFetched) {
     return (
-      <Container sx={{ fontFamily: "Vazir" }}>
+      <Page sx={{ fontFamily: "Vazir" }}>
         <RichTextEditor data={post?.data} isReadOnly={true} id={id} />
-      </Container>
+      </Page>
     );
   } else {
     return (

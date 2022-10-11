@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 
-export default function displayToast(message) {
-    toast(message, {
+export default function successToast(message) {
+    toast.success(message, {
         position: "top-left",
         autoClose: 5000,
         hideProgressBar: false,
@@ -9,9 +9,11 @@ export default function displayToast(message) {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
+        //right to left direction
+        rtl: false,
         // style the progress bar
         progressStyle: {
             background: "#00d587",
-        }
+        },
     });
 }

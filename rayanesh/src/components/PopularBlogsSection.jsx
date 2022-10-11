@@ -23,13 +23,14 @@ const PopularBlogsSection = ({blogs}) => {
             <Typography variant={"body2"} dir={"rtl"} color={'textSecondary'} gutterBottom>
                 مطالبی که بیشترین بازدید را داشته‌اند
             </Typography>
-            <Grid container justifyContent={'center'} spacing={2} columns={{sm: 12, md: 3}}>
+            <Grid container justifyContent={'center'} spacing={2} columns={{sm: 12, md: 3}} alignItems="stretch">
                 {blogs?.map((blog) => (
                     <Grid item sm={12} md={1} key={blog.id}>
                         <Card
                             sx={{
+                                boxShadow: 0,
                                 ':hover': {
-                                    boxShadow: 20,
+                                    boxShadow: 6,
                                 }
                             }}
 
@@ -55,6 +56,7 @@ const PopularBlogsSection = ({blogs}) => {
                                 </CardContent>
                             </CardActionArea>
                         </Card>
+
                     </Grid>
                 ))}
             </Grid>

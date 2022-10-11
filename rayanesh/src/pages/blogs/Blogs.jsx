@@ -1,4 +1,4 @@
-import BlogIntro from "../../components/BlogIntro";
+import BlogsIntro from "../../components/BlogsIntro";
 import PopularBlogsSection from "../../components/PopularBlogsSection";
 import BlogsViewer from "../../components/BlogsViewer";
 import useGetPopularPosts from "../../hooks/useGetPopularPosts";
@@ -40,7 +40,7 @@ function Blogs() {
     return (
       <Page>
         <PopularBlogsSection blogs={popularBlogsWithUser} />
-        <BlogIntro />
+        <BlogsIntro />
         <BlogsViewer
           blogs={recentBlogsWithUser}
           fetchNextPage={fetchNextPage}

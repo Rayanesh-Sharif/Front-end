@@ -1,5 +1,5 @@
 import React from "react";
-import {createTheme, ThemeProvider} from "@mui/material";
+import {createTheme, responsiveFontSizes, ThemeProvider} from "@mui/material";
 import rtlPlugin from "stylis-plugin-rtl";
 import {CacheProvider} from "@emotion/react";
 import createCache from "@emotion/cache";
@@ -18,14 +18,22 @@ const cacheRtl = createCache({
     stylisPlugins: [prefixer, rtlPlugin]
 });
 
-const theme = createTheme({
+let theme = createTheme({
     direction: 'rtl',
+    transitions: {
+        duration: {
+            enteringScreen: 1500,
+            leavingScreen: 1000,
+        }
+    },
     typography: {
         fontFamily: [
             'Vazir'
         ].join(','),
     },
 });
+
+theme = responsiveFontSizes(theme);
 
 function App() {
     React.useLayoutEffect(() => {

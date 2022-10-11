@@ -1,15 +1,29 @@
 import React from 'react';
 import Page from "../../components/general/Page";
 import {Container} from "@mui/material";
-import ConstructionIcon from '@mui/icons-material/Construction';
+import HomepageIntro from "../../components/HomepageIntro";
+import {styled} from "@mui/material/styles";
+import BlogsIntro from "../../components/BlogsIntro";
+import RayanNameIntro from "../../components/RayanNameIntro";
+import AboutUsIntro from "../../components/AboutUsIntro";
 
-function LandingPage(props) {
+const LandingPageContainer = styled(Container)(({theme}) => ({
+    margin: '0',
+    padding: '0',
+    maxWidth: '100%',
+}));
+
+
+function LandingPage() {
 
     return (
         <Page>
-            <Container>
-                <h1>Under Construction <ConstructionIcon/></h1>
-            </Container>
+            <LandingPageContainer maxWidth='100%' disableGutters>
+                <HomepageIntro/>
+                <BlogsIntro />
+                <RayanNameIntro />
+                <AboutUsIntro />
+            </LandingPageContainer>
         </Page>
     );
 }

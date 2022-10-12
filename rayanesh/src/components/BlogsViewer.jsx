@@ -7,28 +7,50 @@ import {
     Container, CardActionArea, Divider,
 } from "@mui/material";
 import LoadingButton from '@mui/lab/LoadingButton';
-import React, {useState} from "react";
+import React from "react";
 import {useInView} from "react-intersection-observer";
 import BlogMeta from "./general/BlogMeta";
 import SkeletonBlog from "./SkeletonBlog";
 import {useNavigate} from "react-router-dom";
+import {styled} from "@mui/material/styles";
 
-const cardStyle = {
+
+const BlogCard = styled(Card)(({theme}) => ({
+    boxShadow: 'none',
     marginBottom: 3,
     marginTop: 3,
-    width: "75%",
-    marginLeft: "auto",
-    marginRight: "auto",
-    boxShadow: 0,
-};
+    maxWidth: '75%',
+    [theme.breakpoints.down('sm')]: {
+        maxWidth: '100%',
+    }
+}));
 
-const mediaStyle = {
+const BlogMedia = styled(CardMedia)(({}) => ({
     borderRadius: 2,
     maxWidth: '75%',
     height: '90%',
+}))
+
+const MediaGrid = styled(Grid)(({}) => ({
     display: 'flex',
     flexDirection: 'column',
-    alignSelf:'auto'
+    justifyContent: 'center',
+    direction: 'initial',
+}))
+
+const BlogContainer = styled(Container)(() => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+}));
+
+const mediaStyle = {
+    borderRadius: 2,
+    maxWidth: '85%',
+    maxHeight: '85%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignSelf: 'auto'
 };
 
 const BlogsViewer = ({
@@ -50,11 +72,12 @@ const BlogsViewer = ({
     const navigate = useNavigate();
     return (
         <div>
-            <Container>
+
+            <BlogContainer>
                 {blogs?.map((blog) => (
-                    <Card  sx={cardStyle}
-                          onClick={() => navigate(`/blogs/${blog.id}`)}
-                          key={blog.id}
+                    <BlogCard
+                        onClick={() => navigate(`/blogs/${blog.id}`)}
+                        key={blog.id}
                     >
                         <CardActionArea>
                             <Grid dir={"rtl"} container>
@@ -73,8 +96,8 @@ const BlogsViewer = ({
                                         <BlogMeta blog={blog}/>
                                     </CardContent>
                                 </Grid>
-                                <Grid item sm={3} xs={5} sx={{alignSelf: 'auto'}}>
-                                    <CardMedia
+                                <MediaGrid direction={'ltr'} item sm={3} xs={5}>
+                                    <BlogMedia
                                         sx={mediaStyle}
                                         image={
                                             "https://picsum.photos/1000/1000?random=" + (blog.id + 3)
@@ -82,15 +105,14 @@ const BlogsViewer = ({
                                         component="img"
                                         alt={blog.title}
                                     />
-                                </Grid>
+                                </MediaGrid>
                             </Grid>
                         </CardActionArea>
-                        <Divider sx={{marginTop:'1rem'}}/>
-                    </Card>
+                        <Divider/>
+                    </BlogCard>
                 ))}
-                <div>
                     {
-                        isFetchingNextPage && <SkeletonBlog />
+                        isFetchingNextPage && <SkeletonBlog/>
                     }
                     <Grid container justifyContent={'center'}>
                         <LoadingButton
@@ -108,11 +130,10 @@ const BlogsViewer = ({
                                     : "Nothing more to load"}
                         </LoadingButton>
                     </Grid>
-                </div>
                 <div>
                     {isFetching && !isFetchingNextPage ? "Background Updating..." : null}
                 </div>
-            </Container>
+            </BlogContainer>
         </div>
     );
 };

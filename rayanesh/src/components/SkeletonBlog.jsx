@@ -1,24 +1,24 @@
 import {Card, CardContent, Divider, Grid, Skeleton} from "@mui/material";
-import React, {useState} from "react";
+import React from "react";
+import {styled} from "@mui/material/styles";
 
 let times = 0;
-const cardStyle = {
+const BlogCard = styled(Card)(({theme}) => ({
+    boxShadow: 'none',
     marginBottom: 3,
     marginTop: 3,
-    width: "75%",
-    marginLeft: "auto",
-    marginRight: "auto",
-    boxShadow: 0,
-};
+    width: '75%',
+    [theme.breakpoints.down('sm')]: {
+        width: '100%',
+    }
+}));
 
-const mediaStyle = {
-    borderRadius: 2,
-    maxWidth: '75%',
-    height: '90%',
+const MediaGrid = styled(Grid)(({}) => ({
     display: 'flex',
     flexDirection: 'column',
-    alignSelf:'auto'
-};
+    justifyContent: 'center',
+    direction: 'initial',
+}))
 
 function skeletonMeta() {
     return <Grid dir={'rtl'} container alignItems="center" spacing={1}>
@@ -44,12 +44,10 @@ function skeletonMeta() {
 }
 
 function SkeletonBlog() {
-    times++;
-    console.log(times);
     return [...Array(3)].map((e, i) =>
-        <Card square sx={cardStyle} key={i + times * 3}>
+        <BlogCard square key={i + times * 3}>
             <Grid dir={"rtl"} container>
-                <Grid item xs={9}>
+                <Grid item sm={9} xs={7}>
                     <CardContent dir={"rtl"}>
                         <Skeleton
                             variant={'text'}
@@ -62,12 +60,12 @@ function SkeletonBlog() {
                         {skeletonMeta()}
                     </CardContent>
                 </Grid>
-                <Grid item xs={3}>
-                    <Skeleton  variant={'rectangular'} height={'100%'} sx={mediaStyle}/>
-                </Grid>
+                <MediaGrid dir={'ltr'} item sm={3} xs={5}>
+                    <Skeleton  variant={'rectangular'} height={'95%'} width={'85%'} />
+                </MediaGrid>
             </Grid>
-            <Divider sx={{marginTop:'1rem'}}/>
-        </Card>
+            <Divider sx={{marginBottom:'0.5rem', marginTop:'0.5rem'}}/>
+        </BlogCard>
     );
 }
 

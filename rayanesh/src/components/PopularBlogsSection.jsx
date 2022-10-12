@@ -38,7 +38,7 @@ const PopularBlogsSection = ({blogs}) => {
 
                         >
                             <CardActionArea>
-                                <CardMedia sx={{height: 275, width: '100%'}}>
+                                <CardMedia sx={{width: '100%'}}>
                                     <Image
                                         width='100%'
                                         height='100%'

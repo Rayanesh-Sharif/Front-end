@@ -4,6 +4,8 @@ import {createRoot} from "react-dom/client";
 import './index.css';
 import App from './App';
 import './assets/fonts/Vazir.ttf'
+import './assets/fonts/iran_sans.ttf'
+import './assets/fonts/BArshia.ttf'
 const root = createRoot(document.getElementById('root'));
 
 root.render(

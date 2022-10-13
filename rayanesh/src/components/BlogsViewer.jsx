@@ -96,7 +96,7 @@ const BlogsViewer = ({
                                         <BlogMeta blog={blog}/>
                                     </CardContent>
                                 </Grid>
-                                <MediaGrid direction={'ltr'} item sm={3} xs={5}>
+                                <MediaGrid item sm={3} xs={5}>
                                     <BlogMedia
                                         sx={mediaStyle}
                                         image={

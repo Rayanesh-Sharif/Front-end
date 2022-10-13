@@ -7,7 +7,7 @@ const containerStyle = {
     borderRadius: '10px',
 }
 
-const ColorButton = styled(Button)(({theme}) => ({
+const ColorButton = styled(Button)(({}) => ({
     margin: '0.5rem',
     borderColor: 'white',
     color: 'white',
@@ -22,7 +22,7 @@ function ButtonDiv() {
     const navigate = useNavigate()
     return <div style={{marginTop: '1.5rem', marginBottom: '1.5'}}>
         <ColorButton
-            onClick={() => navigate("/blogs/write")}
+            onClick={() => {}}
         >
             در مورد ما بیشتر بدونید!
         </ColorButton>

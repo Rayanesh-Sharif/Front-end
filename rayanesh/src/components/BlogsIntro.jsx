@@ -7,7 +7,7 @@ const containerStyle = {
     borderRadius: '10px',
 }
 
-const ColorButton = styled(Button)(({theme}) => ({
+const ColorButton = styled(Button)(({}) => ({
     margin: '0.5rem',
     borderColor: 'white',
     color: 'white',
@@ -54,7 +54,7 @@ const BlogsIntro = () => {
             <Grid container>
                     <Grid display={'flex'} flexDirection={'column'} alignItems={'center'} item lg={7} md={7} sm={7}
                           xs={12}>
-                        <img src={images.Typewriter} alt={'Typewriter'} style={{width: '90%', height:'90%'}}/>
+                        <img src={images.Blogs} alt={'Typewriter'} style={{width: '90%', height:'90%'}}/>
                     </Grid>
                 <Grid item lg={5} md={5} sm={5} xs={12}>
                     {ContextDiv()}

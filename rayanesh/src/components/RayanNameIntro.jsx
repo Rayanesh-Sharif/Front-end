@@ -7,7 +7,7 @@ const containerStyle = {
     borderRadius: '10px',
 }
 
-const ColorButton = styled(Button)(({theme}) => ({
+const ColorButton = styled(Button)(({}) => ({
     margin: '0.5rem',
     borderColor: 'white',
     color: 'white',
@@ -22,7 +22,8 @@ function ButtonDiv() {
     const navigate = useNavigate()
     return <div style={{marginTop: '1.5rem', marginBottom: '1.5'}}>
         <ColorButton
-            onClick={() => navigate("/blogs/write")}
+            onClick={() => {
+            }}
         >
             مشاهده رایان نامه ها
         </ColorButton>
@@ -38,7 +39,8 @@ function ContextDiv() {
         </Typography>
 
         <Typography marginTop={'2rem'} variant={'h5'} gutterBottom>
-            نشریه رایانش هر چند وقت یک بار مجله هایی برای شما منتشر میکنه. در اینجا می توانید نشریات رایانش را دنبال کنید
+            نشریه رایانش هر چند وقت یک بار مجله هایی برای شما منتشر میکنه. در اینجا می توانید نشریات رایانش را دنبال
+            کنید
         </Typography>
     </div>;
 }
@@ -48,10 +50,10 @@ const RayanNameIntro = () => {
         <Container dir={'ltr'} sx={containerStyle}>
             <Divider sx={{marginBottom: '1rem'}}/>
             <Grid container>
-                    <Grid display={'flex'} flexDirection={'column'} alignItems={'center'} item lg={7} md={7} sm={7}
-                          xs={12}>
-                        <img src={images.Magazine} alt={'Typewriter'} style={{width: '90%', height:'90%'}}/>
-                    </Grid>
+                <Grid display={'flex'} flexDirection={'column'} alignItems={'center'} item lg={7} md={7} sm={7}
+                      xs={12}>
+                    <img src={images.Rayanname} alt={'Typewriter'} style={{width: '90%', height: '90%'}}/>
+                </Grid>
                 <Grid dir={'rtl'} item lg={5} md={5} sm={5} xs={12}>
                     {ContextDiv()}
                     {ButtonDiv()}

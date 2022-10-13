@@ -69,7 +69,7 @@ const NavbarSection = () => {
 
 
     return (
-        <ColorAppBar dir={'rtl'} position="static">
+        <ColorAppBar dir={'rtl'} position="sticky">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <img

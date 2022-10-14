@@ -9,8 +9,6 @@ export default function successToast(message) {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        //right to left direction
-        rtl: false,
         // style the progress bar
         progressStyle: {
             background: "#00d587",

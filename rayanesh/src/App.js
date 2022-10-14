@@ -49,7 +49,7 @@ function App() {
                         <LoginContextProvider>
                             <AllRoutes/>
                         </LoginContextProvider>
-                        <ToastContainer/>
+                        <ToastContainer rtl={true}  />
                     </ThemeProvider>
                 </CacheProvider>
             </QueryClientProvider>

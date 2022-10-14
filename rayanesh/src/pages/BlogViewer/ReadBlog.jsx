@@ -6,10 +6,10 @@ import useGetSingleUser from "../../hooks/useGetSingleUser";
 import Page from "../../components/general/Page";
 
 function ReadBlog() {
-  let params = useParams();
-  const id = params.id;
-  const { post, postStatus } = useGetSinglePost({ postId: id });
-  let isEnable = null;
+  const id = useParams().id;
+
+  let isEnable = Boolean(id);
+  const { post, postStatus } = useGetSinglePost({ postId: id, isEnable: isEnable});
   isEnable = postStatus === "success";
   const { user, userStatus } = useGetSingleUser({
     userId: post?.user_id,

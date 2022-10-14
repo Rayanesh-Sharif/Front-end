@@ -1,14 +1,19 @@
 import {useQuery} from "@tanstack/react-query";
 import {fetchPostById} from "../api/posts";
 
-function useGetSinglePost({postId}) {
+function useGetSinglePost({postId, isEnable}) {
     const {
         data: post,
         status: postStatus,
-    } = useQuery(
-        ['getSinglePost', postId],
-        () => fetchPostById({postId}),
-    )
+    } = useQuery({
+        queryKey: ['getSinglePost', postId],
+        queryFn: () => fetchPostById({postId}),
+        options: {
+            enabled: isEnable
+        }
+ 
+    }
+   )
     return {post, postStatus}
 }
 

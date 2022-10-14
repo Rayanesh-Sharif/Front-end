@@ -9,6 +9,7 @@ import Paragraph from "@editorjs/paragraph";
 import CodeTool from "@editorjs/code";
 import ToggleBlock from "editorjs-toggle-block";
 import "./temp.scss";
+import { useEffect, useLayoutEffect, useRef } from "react";
 const textEditorStyle = {
   "&.ce-block__content": {
     maxWidth: "75%",
@@ -18,16 +19,18 @@ const textEditorStyle = {
   },
 };
 
-let isCreated = false;
-let editor = null;
+// let isCreated = false;
+// let editor = null;
+let isDone = false;
 const initEditor = ({ id, data, isReadOnly }) => {
-  if (isCreated || editor) return null;
-  isCreated = true;
-  editor = new EditorJS({
+  // if (isCreated || editor) return null;
+  // isCreated = true;
+  let editor = {
     holder: id,
     placeholder: "هر آنچه دل تنگت خواست",
     readOnly: isReadOnly,
     data: data,
+    onReady: () => (isDone = true),
     tools: {
       header: {
         class: Header,
@@ -167,24 +170,34 @@ const initEditor = ({ id, data, isReadOnly }) => {
         },
       },
     },
-  });
+  };
   return editor;
 };
 
 export const saveEditor = () => {
-  let output = editor.save();
-  output.then((data) => {
-    console.log(JSON.stringify(data));
-    return data;
-  });
+  // let output = editor.save();
+  // output.then((data) => {
+  // console.log(JSON.stringify(data));
+  // return data;
+  // });
   // TODO move to auto save
   /*  setInterval(() => editor.save().then((data) => data ), 5000 )
       return output;*/
 };
 
 const RichTextEditor = ({ data, isReadOnly, id }) => {
-  initEditor({ data, isReadOnly, id });
-  return <div style={{ marginTop: "2%" }} id={id} />;
+  const editor = useRef<EditorJS | null>(null);
+  useEffect(() => {
+    if (!editor.current) {
+      editor.current = new EditorJS(initEditor({ data, isReadOnly, id }));
+    }
+    return () => {
+      if (editor.current && editor.current.destroy) {
+        editor.current.destroy();
+      }
+    };
+  }, []);
+  return <div style={{ marginTop: "2%" }} id={id} ref={editor} />;
 };
 
 export default RichTextEditor;

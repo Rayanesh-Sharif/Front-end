@@ -61,7 +61,16 @@ function SkeletonBlog() {
                     </CardContent>
                 </Grid>
                 <MediaGrid dir={'ltr'} item sm={3} xs={5}>
-                    <Skeleton  variant={'rectangular'} height={'95%'} width={'85%'} />
+                    <div style={
+                        {
+                            // create a blink animation
+                            backgroundColor: '#f4f4f4',
+                            paddingTop: '100%',
+                            animation: 'blink 1s linear infinite',
+                            borderRadius: 4,
+                        }
+                    }>
+                    </div>
                 </MediaGrid>
             </Grid>
             <Divider sx={{marginBottom:'0.5rem', marginTop:'0.5rem'}}/>

@@ -13,6 +13,7 @@ import BlogMeta from "./general/BlogMeta";
 import SkeletonBlog from "./SkeletonBlog";
 import {useNavigate} from "react-router-dom";
 import {styled} from "@mui/material/styles";
+import Image from "./general/Image";
 
 
 const BlogCard = styled(Card)(({theme}) => ({
@@ -27,8 +28,6 @@ const BlogCard = styled(Card)(({theme}) => ({
 
 const BlogMedia = styled(CardMedia)(({}) => ({
     borderRadius: 2,
-    maxWidth: '75%',
-    height: '90%',
 }))
 
 const MediaGrid = styled(Grid)(({}) => ({
@@ -38,19 +37,23 @@ const MediaGrid = styled(Grid)(({}) => ({
     direction: 'initial',
 }))
 
-const BlogContainer = styled(Container)(() => ({
+const BlogContainer = styled(Container)(({}) => ({
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'space-between',
     alignItems: 'center',
 }));
 
 const mediaStyle = {
-    borderRadius: 2,
-    maxWidth: '85%',
-    maxHeight: '85%',
+    borderRadius: 4,
+    marginBottom: 1,
     display: 'flex',
     flexDirection: 'column',
     alignSelf: 'auto'
+
+    // set height and width in large screens
+
+
 };
 
 const BlogsViewer = ({
@@ -99,12 +102,15 @@ const BlogsViewer = ({
                                 <MediaGrid item sm={3} xs={5}>
                                     <BlogMedia
                                         sx={mediaStyle}
-                                        image={
-                                            "https://picsum.photos/1000/1000?random=" + (blog.id + 3)
-                                        }
-                                        component="img"
-                                        alt={blog.title}
-                                    />
+                                    >
+                                        <Image
+                                            width='100%'
+                                            height='100%'
+                                            path={"https://picsum.photos/1000/1000?random=" + (blog.id + 3)}
+                                            name={blog.title}
+                                            imageStyle={mediaStyle}
+                                        />
+                                    </BlogMedia>
                                 </MediaGrid>
                             </Grid>
                         </CardActionArea>
@@ -112,7 +118,7 @@ const BlogsViewer = ({
                     </BlogCard>
                 ))}
                     {
-                        isFetchingNextPage && <SkeletonBlog/>
+                        <SkeletonBlog/>
                     }
                     <Grid container justifyContent={'center'}>
                         <LoadingButton

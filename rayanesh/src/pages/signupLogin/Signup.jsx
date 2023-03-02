@@ -14,7 +14,6 @@ import {images} from "../../constants";
 import {signUpSchema} from "../../validationSchema/allSchemas";
 import {Link} from "react-router-dom";
 
-
 const mainContainerStyle = {
     backgroundImage: `url(${images.Curve})`,
     height: '100vh',
@@ -30,7 +29,6 @@ const formStyle = {
     borderRadius: '1rem',
     backgroundColor: 'white'
 }
-
 
 function Signup() {
     const {mutation} = useSignup();

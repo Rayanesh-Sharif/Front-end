@@ -11,8 +11,6 @@ import {
 import BlogMeta from "./general/BlogMeta";
 import Image from "./general/Image";
 import {useNavigate} from "react-router-dom";
-
-
 const PopularBlogsSection = ({blogs}) => {
     const navigate = useNavigate();
     return (
@@ -40,10 +38,9 @@ const PopularBlogsSection = ({blogs}) => {
                             <CardActionArea>
                                 <CardMedia sx={{width: '100%'}}>
                                     <Image
-                                        width='100%'
-                                        height='100%'
                                         path={"https://picsum.photos/1000/1000?random=" + (blog.id + 3)}
-                                        name={blog.title}/>
+                                        name={blog.title}
+                                    />
                                 </CardMedia>
                                 <CardContent dir='rtl'>
                                     <Typography variant="h6" fontWeight={'bold'} gutterBottom>

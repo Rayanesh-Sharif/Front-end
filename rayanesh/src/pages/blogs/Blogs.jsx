@@ -5,54 +5,62 @@ import useGetPopularPosts from "../../hooks/useGetPopularPosts";
 import useGetRecentPosts from "../../hooks/useGetRecentPosts";
 import useGetUsers from "../../hooks/useGetUsers";
 import mapBlogsToUser from "../../helpers/mapBlogsToUser";
-import { useState } from 'react';
+import {useState} from 'react';
 import Page from "../../components/general/Page";
 
 function Blogs() {
-  const [page, setPage] = useState(2);
-  const { popularPosts, popularPostsStatus } = useGetPopularPosts();
-  const { recentPosts, recentPostsStatus, fetchNextPage, hasNextPage, isFetching, isFetchingNextPage } =
-    useGetRecentPosts(page);
+    const [page, setPage] = useState(2);
+    const {popularPosts, popularPostsStatus} = useGetPopularPosts();
 
-  const isPostsFetched =
-    popularPostsStatus === "success" && recentPostsStatus === "success";
+    // editor = null;
+    // isCreated = false;
 
-  let posts = [];
-  let idList = new Set();
-  if (isPostsFetched) {
-    popularPosts.forEach((post) => idList.add(post.user_id));
-    recentPosts?.pages?.forEach((page) => {
-      page.forEach((post) => {
-        idList.add(post.user_id);
-        posts.push(post);
-      });
+
+    const popularPostsWriters = popularPosts?.map((post) => post.user_id);
+    const {users, isSuccess: isPopularWritersFetched} = useGetUsers({
+        data: popularPosts?.length > 0 ? [...popularPostsWriters] : [],
+        isEnable: popularPostsStatus === "success",
     });
-  }
 
-  const { users, isSuccess: isUsersFetched } = useGetUsers({
-    data: [...idList],
-    isEnable: isPostsFetched,
-  });
+    const {recentPosts, recentPostsStatus, fetchNextPage, hasNextPage, isFetching, isFetchingNextPage} =
+        useGetRecentPosts(page);
 
-  if (isUsersFetched && isPostsFetched) {
-    const popularBlogsWithUser = mapBlogsToUser({ blogs: popularPosts, users });
-    const recentBlogsWithUser = mapBlogsToUser({ blogs: posts, users });
+    const posts = []
+    const recentPostsWriters = []
+
+    if (recentPostsStatus === "success") {
+        recentPosts.pages.forEach((page) => {
+            page.forEach((post) => {
+                posts.push(post)
+                recentPostsWriters.push(post.user_id)
+            })
+        })
+    }
+
+
+    const {users: recentPostsUsers, isSuccess: isRecentWritersFetched} = useGetUsers({
+        data: [...recentPostsWriters],
+        isEnable: recentPostsStatus === "success",
+    });
+
     return (
-      <Page>
-        <PopularBlogsSection blogs={popularBlogsWithUser} />
-        <BlogsIntro />
-        <BlogsViewer
-          blogs={recentBlogsWithUser}
-          fetchNextPage={fetchNextPage}
-          hasNextPage={hasNextPage}
-          isFetching={isFetching}
-          isFetchingNextPage={isFetchingNextPage}
-          setPage={setPage}
-          page={page}
-        />
-      </Page>
+        <Page>
+            {isPopularWritersFetched && <PopularBlogsSection blogs={mapBlogsToUser({blogs: popularPosts, users})}/>}
+            <BlogsIntro/>
+            {
+                isRecentWritersFetched &&
+                <BlogsViewer
+                    blogs={mapBlogsToUser({blogs: posts, users: recentPostsUsers})}
+                    fetchNextPage={fetchNextPage}
+                    hasNextPage={hasNextPage}
+                    isFetching={isFetching}
+                    isFetchingNextPage={isFetchingNextPage}
+                    setPage={setPage}
+                    page={page}
+                />
+            }
+        </Page>
     );
-  }
 }
 
 export default Blogs;

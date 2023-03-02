@@ -36,7 +36,7 @@ export const HomepageButton = styled(Button)({
 
 // responsive typography for h1 variant
 export const ResponsiveHeader = styled(Typography)(({theme}) => ({
-    fontFamily: 'B Arshia',
+    fontFamily: 'vazir',
     [theme.breakpoints.down('sm')]: {
         fontSize: '2.3rem',
     },
@@ -52,7 +52,7 @@ export const ResponsiveHeader = styled(Typography)(({theme}) => ({
 }));
 
 export const ResponsiveBody = styled(Typography)(({theme}) => ({
-    fontFamily: 'B Arshia',
+    fontFamily: 'vazir',
     [theme.breakpoints.down('sm')]: {
         fontSize: '1.3rem',
     },

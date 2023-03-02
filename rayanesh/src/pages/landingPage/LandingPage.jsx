@@ -6,6 +6,7 @@ import {styled} from "@mui/material/styles";
 import BlogsIntro from "../../components/BlogsIntro";
 import RayanNameIntro from "../../components/RayanNameIntro";
 import AboutUsIntro from "../../components/AboutUsIntro";
+import Footer from "../../components/Footer";
 
 const LandingPageContainer = styled(Container)(({theme}) => ({
     margin: '0',
@@ -24,6 +25,7 @@ function LandingPage() {
                 <RayanNameIntro />
                 <AboutUsIntro />
             </LandingPageContainer>
+            <Footer/>
         </Page>
     );
 }

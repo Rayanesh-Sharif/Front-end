@@ -8,9 +8,7 @@ function useGetSingleUser({userId, isEnable}) {
     } = useQuery({
         queryKey: ['getUserById', userId],
         queryFn: () => fetchUserById({userId}),
-        options: {
-            enabled: isEnable
-        }
+        enabled: isEnable
     })
 
     return {user, userStatus}

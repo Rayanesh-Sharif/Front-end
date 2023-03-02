@@ -1,6 +1,7 @@
 import React from 'react';
 import {styled} from "@mui/material/styles";
 import NavbarSection from "../NavbarSection";
+import Footer from "../Footer";
 
 const Container = styled('div')(({color = 'white'}) => ({
     width: '100%',
@@ -12,7 +13,7 @@ function Page({children}) {
 
     return (
         <Container>
-            <NavbarSection loggedIn={false}/>
+            <NavbarSection/>
             {children}
         </Container>
     );

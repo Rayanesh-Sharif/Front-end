@@ -7,6 +7,7 @@ import NotFound from "../pages/notFound/NotFound";
 import Signup from "../pages/signupLogin/Signup";
 import Login from "../pages/signupLogin/Login";
 import React from "react";
+import IssuePreviewPage from "../pages/Issues/IssuePreviewPage";
 
 
 function AllRoutes() {
@@ -18,6 +19,8 @@ function AllRoutes() {
                 <Route path="/blogs" element={<Blogs/>}/>
                 <Route path="/blogs/:id" element={<ReadBlog/>}/>
                 <Route path="/blogs/write" element={<WriteBlog/>}/>
+                <Route path="/issues" element={<NotFound/>}/>
+                <Route path="/issues/:id" element={<IssuePreviewPage/>}/>
                 <Route path="*" element={<NotFound/>}/>
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/login" element={<Login/>}/>

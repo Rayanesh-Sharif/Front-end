@@ -49,7 +49,7 @@ const AboutUsIntro = () => {
         <Container sx={containerStyle}>
             <Divider sx={{marginBottom: '1rem'}}/>
             <Grid container>
-                <Grid display={'flex'} flexDirection={'column'} alignItems={'center'} item lg={7} md={7} sm={7}
+                <Grid   item lg={7} md={7} sm={7}
                       xs={12}>
                     <img src={images.AboutUs} alt={'Typewriter'} style={{width: '90%', height:'90%'}}/>
                 </Grid>

@@ -9,7 +9,7 @@ import {
     TextField, 
 } from "@mui/material";
 
-import {saveEditor} from "./general/RichTextEditor";
+import {saveEditor} from "./general/richTextEditor";
 
 
 export default function BlogWritePublishDialog({open, setOpen}) {
@@ -61,7 +61,7 @@ export default function BlogWritePublishDialog({open, setOpen}) {
             </DialogContent>
             <DialogActions>
                 <Button color={'error'} onClick={handleClose}>انصراف</Button>
-                <Button color={'success'} onClick={() => saveEditor()}>انتشار</Button>
+                {/*<Button color={'success'} onClick={() => saveEditor()}>انتشار</Button>*/}
             </DialogActions>
         </Dialog>
     )

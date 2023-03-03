@@ -6,6 +6,7 @@ import GreenWave from '../assets/pics/homepage-background.svg'
 import Rayanname from '../assets/pics/rayanname.svg'
 import AboutUs from '../assets/pics/aboutus.svg'
 import Magazine from '../assets/pics/magazine.png'
+import IssueTestCover from '../assets/pics/coverTest.jpg'
 export default {
     Logo,
     View,
@@ -14,5 +15,6 @@ export default {
     GreenWave,
     Rayanname,
     AboutUs,
-    Magazine
+    Magazine,
+    IssueTestCover
 } 

@@ -25,11 +25,11 @@ const pages = [
         path: '/about',
     },
     {
-        title: 'رایان نامه',
+        title: 'رایان‌نامه',
         path: '/mail',
     },
     {
-        title: 'بلاگ ها',
+        title: 'بلاگ‌ها',
         path: '/blogs',
     }
 ];

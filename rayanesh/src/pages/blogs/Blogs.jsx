@@ -12,10 +12,6 @@ function Blogs() {
     const [page, setPage] = useState(2);
     const {popularPosts, popularPostsStatus} = useGetPopularPosts();
 
-    // editor = null;
-    // isCreated = false;
-
-
     const popularPostsWriters = popularPosts?.map((post) => post.user_id);
     const {users, isSuccess: isPopularWritersFetched} = useGetUsers({
         data: popularPosts?.length > 0 ? [...popularPostsWriters] : [],

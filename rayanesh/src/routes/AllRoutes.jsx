@@ -19,7 +19,7 @@ function AllRoutes() {
                 <Route path="/blogs" element={<Blogs/>}/>
                 <Route path="/blogs/:id" element={<ReadBlog/>}/>
                 <Route path="/blogs/write" element={<WriteBlog/>}/>
-                <Route path="/issues" element={<NotFound/>}/>
+                <Route path="/issues" element={<IssuePreviewPage/>}/>
                 <Route path="/issues/:id" element={<IssuePreviewPage/>}/>
                 <Route path="*" element={<NotFound/>}/>
                 <Route path="/signup" element={<Signup/>}/>

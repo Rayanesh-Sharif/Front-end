@@ -6,9 +6,7 @@ function useGetUsers({data, isEnable}) {
         return {
             queryKey: ['getUserById', id],
             queryFn: () => fetchUserById({userId: id}),
-            options: {
-                enabled: isEnable
-            }
+            enabled: isEnable
         }
     })
 

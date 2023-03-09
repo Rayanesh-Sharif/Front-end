@@ -11,7 +11,7 @@ export async function fetchUserById({userId}) {
 
 export async function postUser(user) {
     const {data} = await handleRequests({
-        url: 'users',
+        url: 'v1/accounts/register/',
         method: 'POST',
         data: user
     })

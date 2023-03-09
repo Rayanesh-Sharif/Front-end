@@ -6,14 +6,12 @@ import {useSetUserLoginStatus} from "./useSetUserLoginStatus";
 
 export default function useSignup() {
     const navigate = useNavigate();
-    const {setIsRegistered} = useSetUserLoginStatus()
     const mutation = useMutation(
          postUser,
         {
             onSuccess: () => {
                 successToast('ثبت نام با موفقیت انجام شد')
-                setIsRegistered(true);
-                navigate("/blogs");
+                navigate("/login");
             },
             onError: (data) => {
                 successToast(data);

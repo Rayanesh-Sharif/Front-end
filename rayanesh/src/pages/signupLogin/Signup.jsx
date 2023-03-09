@@ -43,8 +43,8 @@ function Signup() {
         onSubmit: (values) => {
             const user = {
                 username: values.username,
-                password: values.password,
-                email: values.email
+                email: values.email,
+                password: values.password
             }
             mutation.mutate(user)
         },
@@ -67,7 +67,7 @@ function Signup() {
                         <Field id={'username'} name={'username'} label={'نام کاربری'} formik={formik}/>
                         <Field id={'email'} name={'email'} label={'آدرس ایمیل'} formik={formik}/>
                         <PasswordField id={'password'} name={'password'} label={'رمز عبور'} formik={formik}/>
-                        <Field id={'confirmPassword'} name={'confirmPassword'} label={'تکرار رمز'} formik={formik}/>
+                        <PasswordField id={'confirmPassword'} name={'confirmPassword'} label={'تکرار رمز'} formik={formik}/>
                         <SubmitButton text={'ثبت نام'}/>
                     </form>
 

@@ -51,17 +51,12 @@ export default function BlogWritePublishDialog({open, setOpen}) {
                             id="select-image"
                             style={{display: 'none'}}
                         />
-                        <label htmlFor="select-image">
-                            <Button variant="contained" color="primary" component="span">
-                                Upload Image
-                            </Button>
-                        </label>
                     </Grid>
                 </Grid>
             </DialogContent>
             <DialogActions>
                 <Button color={'error'} onClick={handleClose}>انصراف</Button>
-                {/*<Button color={'success'} onClick={() => saveEditor()}>انتشار</Button>*/}
+                <Button color={'success'} onClick={handleClose}>ایجاد بلاگ</Button>
             </DialogActions>
         </Dialog>
     )

@@ -10,10 +10,13 @@ import {
 } from "@mui/material";
 
 import {saveEditor} from "./general/richTextEditor";
+import {useNavigate} from "react-router-dom";
 
 
 export default function BlogWritePublishDialog({open, setOpen}) {
-    const handleClose = () => setOpen(false)
+    const handleClose = () => setOpen(false);
+    const navigate = useNavigate();
+
 
     return (
         <Dialog open={open} onClose={handleClose}>
@@ -56,7 +59,7 @@ export default function BlogWritePublishDialog({open, setOpen}) {
             </DialogContent>
             <DialogActions>
                 <Button color={'error'} onClick={handleClose}>انصراف</Button>
-                <Button color={'success'} onClick={handleClose}>ایجاد بلاگ</Button>
+                <Button color={'success'} onClick={() => navigate('/')}>ایجاد بلاگ</Button>
             </DialogActions>
         </Dialog>
     )

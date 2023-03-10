@@ -20,7 +20,7 @@ export async function postUser(user) {
 
 export async function getToken({username, password}) {
     const {data} = await handleRequests({
-        url: 'tokens',
+        url: 'tokens/',
         method: 'POST',
         data: {username, password}
     })

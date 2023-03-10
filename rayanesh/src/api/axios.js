@@ -1,7 +1,12 @@
 import axios from 'axios'
 
-const api = axios.create({
+export const globalApi = axios.create({
     baseURL: 'http://localhost:8000/'
 })
 
-export default api
+export const authApi = axios.create({
+    baseURL: 'http://localhost:8000/',
+    headers: {
+
+    }
+})

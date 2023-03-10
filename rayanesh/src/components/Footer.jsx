@@ -87,7 +87,7 @@ export default function Footer() {
             >
                 <Typography sx={{color: 'white', fontSize: '1rem'}}>
                     <CopyrightIcon sx={{fontSize: 20, color: 'white', marginRight: '1rem'}}/>
-                    تمامی حقوق این سایت متعلق به رایانش مجله می باشد
+                    تمامی حقوق این سایت متعلق به مجله رایانش می باشد
                 </Typography>
             </Box>
 

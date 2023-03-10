@@ -68,6 +68,7 @@ const BlogsViewer = ({
     const {ref, inView} = useInView();
     React.useEffect(() => {
         if (inView) {
+            console.log('something here')
             setPage((prev) => prev + 1);
             fetchNextPage();
         }

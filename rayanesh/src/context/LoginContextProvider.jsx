@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const loginContext = createContext(null);
 
 export default function LoginContextProvider({ children }) {
-    const [isRegistered, setIsRegistered] = useState(false);
+    const [isRegistered, setIsRegistered] = useState(true);
     const value = {
         isRegistered,
         setIsRegistered,

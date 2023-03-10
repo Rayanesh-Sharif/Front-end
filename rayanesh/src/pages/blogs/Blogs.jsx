@@ -9,7 +9,7 @@ import {useState} from 'react';
 import Page from "../../components/general/Page";
 
 function Blogs() {
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(1);
     const {popularPosts, popularPostsStatus} = useGetPopularPosts();
 
     const popularPostsWriters = popularPosts?.map((post) => post.user_id);

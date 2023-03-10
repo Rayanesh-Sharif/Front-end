@@ -1,18 +1,14 @@
 .ce-block__content,
 .ce-toolbar__content {
   /*on large scree width is 60%*/
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     /*on small screen width is 100%*/
     /*@media (max-width: 768px) (*/
     /*      width: 100%;*/
     /*    )*/
     font-family: 'vazir', serif;
-}
-
-.ce-code__textarea .cdx-input {
-    direction: ltr;
-    background: red;
+    font-size: 18px;
 }
 
 textarea {
